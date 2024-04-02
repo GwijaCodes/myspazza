@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" content="#7ACE7A">
+    <meta name="theme-color">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/69c826159c.js" crossorigin="anonymous"></script>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="src/app.css">
+    <link rel="apple-touch-logo" href="images/icon-192.png">
+    <title>SPAZZA</title>
+</head>
+
+<body>
+    <div class="display">
+        <div class="trashbin"></div>
+        <div class="info">
+            <h1 class="title" id="spazzaText"></h1>
+            <p class="sm-thin" id="oggi"></p>
+        </div>
+    </div>
+    <div class="tomorrow">
+        <div class="domani concave container">
+            <p class="sm-thin">Domani:</p>
+            <p class="sm-bold" id="spazzaDomani">UMIDO</p>
+        </div>
+    </div>
+    <div class="list">
+        <div class="list-item">
+            <section class="item-info">
+                <p class="day-name sm-thin">Domenica:</p>
+                <p class="day-trash sm-bold">Plastica</p>
+            </section>
+            <section class="item-buttons">
+                <div class="button edit convex">
+                    <i class="fa-solid fa-pen"></i>
+                </div>
+                <div class="button more convex">
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+            </section>
+        </div>
+        <div class="list-item">
+            <section class="item-info">
+                <p class="day-name sm-thin">Lunedi:</p>
+                <p class="day-trash sm-bold"></p>
+            </section>
+            <section class="item-buttons">
+                <div class="button edit convex">
+                    <i class="fa-solid fa-pen"></i>
+                </div>
+                <div class="button more convex">
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+            </section>
+        </div>
+        <div class="list-item">
+            <section class="item-info">
+                <p class="day-name sm-thin">Martedi:</p>
+                <p class="day-trash sm-bold"></p>
+            </section>
+            <section class="item-buttons">
+                <div class="button edit convex">
+                    <i class="fa-solid fa-pen"></i>
+                </div>
+                <div class="button more convex">
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="edit-panel">
+        <div class="back button convex">
+            <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <h1 class="title">Modifica</h1>
+        <form>
+            <legend>Domenica:</legend>
+            <p class="input-test sm-thin">aaa</p>
+            <input type="text" class="test">
+            <div>
+                <label>
+                    <input type="checkbox" checked />
+                    Umido</label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" />
+                    Carta</label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" />
+                    Vetro</label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" />
+                    Metallo</label>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="./src/app.js"></script>
+</body>
+
+</html>
