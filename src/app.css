@@ -209,3 +209,12 @@ body {
 .trashes {
   width: 80vw;
 }
+
+select {
+  /*position: absolute;*/
+  width: 85vw;
+  height: 40vh;
+  /*top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);*/
+}

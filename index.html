@@ -33,74 +33,107 @@
         </div>
     </div>
     <div class="list">
-        <div class="list-item">
-            <section class="item-info">
-                <p class="day-name sm-thin">Domenica:</p>
-                <p class="day-trash sm-bold">Plastica</p>
+        <label class="list-item" for="trashes">
+            <p class="item-info sm-bold">Domenica: <span class="sm-thin" id="dom"></span></p>
+            <select name="trashes" id="domTrashes" class="trashes" multiple="multiple">
+                <option value="Vetro">Vetro</option>
+                <option value="Carta">Carta</option>
+                <option value="Umido">Umido</option>
+                <option value="Plastica">Plastica</option>
+                <option value="Metallo">Metallo</option>
+                <option value="Indifferenziata">Indifferenziata</option>
+            </select>
+            <div class="submit button convex" onclick="displayTrash(`dom`, `domTrashes`)">OK</div>
+        </label>
 
-            </section>
-            <section class="item-buttons">
-                <div class="button edit convex">
-                    E
-                </div>
-                <div class="button more convex">
-                    M
-                </div>
-            </section>
-        </div>
-        <div class="list-item">
-            <section class="item-info">
-                <p class="day-name sm-thin">Lunedi:</p>
-                <p class="day-trash sm-bold"></p>
-            </section>
-            <section class="item-buttons">
-                <div class="button edit convex">
-                    E
-                </div>
-                <div class="button more convex">
-                    M
-                </div>
-            </section>
-        </div>
-        <div class="list-item">
-            <section class="item-info">
-                <p class="day-name sm-thin">Martedi:</p>
-                <p class="day-trash sm-bold"></p>
-            </section>
-            <section class="item-buttons">
-                <div class="button edit convex">
-                    E
-                </div>
-                <div class="button more convex">
-                    M
-                </div>
-            </section>
-        </div>
+        <label class="list-item" for="trashes">
+            <p class="item-info sm-bold">Lunedi: <span class="sm-thin" id="lun"></span></p>
+            <select name="trashes" id="lunTrashes" class="trashes" multiple="multiple">
+                <option value="Vetro">Vetro</option>
+                <option value="Carta">Carta</option>
+                <option value="Umido">Umido</option>
+                <option value="Plastica">Plastica</option>
+                <option value="Metallo">Metallo</option>
+                <option value="Indifferenziata">Indifferenziata</option>
+            </select>
+            <div class="submit button convex" onclick="displayTrash(`lun`, `lunTrashes`)">OK</div>
+        </label>
+
+        <label class="list-item" for="trashes">
+            <p class="item-info sm-bold">Martedi: <span class="sm-thin" id="mar"></span></p>
+            <select name="trashes" id="marTrashes" class="trashes" multiple="multiple">
+                <option value="Vetro">Vetro</option>
+                <option value="Carta">Carta</option>
+                <option value="Umido">Umido</option>
+                <option value="Plastica">Plastica</option>
+                <option value="Metallo">Metallo</option>
+                <option value="Indifferenziata">Indifferenziata</option>
+            </select>
+            <div class="submit button convex" onclick="displayTrash(`mar`, `marTrashes`)">OK</div>
+        </label>
+
+        <label class="list-item" for="trashes">
+            <p class="item-info sm-bold">Mercoledi: <span class="sm-thin" id="mer"></span></p>
+            <select name="trashes" id="merTrashes" class="trashes" multiple="multiple">
+                <option value="Vetro">Vetro</option>
+                <option value="Carta">Carta</option>
+                <option value="Umido">Umido</option>
+                <option value="Plastica">Plastica</option>
+                <option value="Metallo">Metallo</option>
+                <option value="Indifferenziata">Indifferenziata</option>
+            </select>
+            <div class="submit button convex" onclick="displayTrash(`mer`, `merTrashes`)">OK</div>
+        </label>
+
+        <label class="list-item" for="trashes">
+            <p class="item-info sm-bold">Giovedi: <span class="sm-thin" id="gio"></span></p>
+            <select name="trashes" id="gioTrashes" class="trashes" multiple="multiple">
+                <option value="Vetro">Vetro</option>
+                <option value="Carta">Carta</option>
+                <option value="Umido">Umido</option>
+                <option value="Plastica">Plastica</option>
+                <option value="Metallo">Metallo</option>
+                <option value="Indifferenziata">Indifferenziata</option>
+            </select>
+            <div class="submit button convex" onclick="displayTrash(`gio`, `gioTrashes`)">OK</div>
+        </label>
+
+        <label class="list-item" for="trashes">
+            <p class="item-info sm-bold">Venerdi: <span class="sm-thin" id="ven"></span></p>
+            <select name="trashes" id="venTrashes" class="trashes" multiple="multiple">
+                <option value="Vetro">Vetro</option>
+                <option value="Carta">Carta</option>
+                <option value="Umido">Umido</option>
+                <option value="Plastica">Plastica</option>
+                <option value="Metallo">Metallo</option>
+                <option value="Indifferenziata">Indifferenziata</option>
+            </select>
+            <div class="submit button convex" onclick="displayTrash(`ven`, `venTrashes`)">OK</div>
+        </label>
+
+        <label class="list-item" for="trashes">
+            <p class="item-info sm-bold">Sabato: <span class="sm-thin" id="sab"></span></p>
+            <select name="trashes" id="sabTrashes" class="trashes" multiple="multiple">
+                <option value="Vetro">Vetro</option>
+                <option value="Carta">Carta</option>
+                <option value="Umido">Umido</option>
+                <option value="Plastica">Plastica</option>
+                <option value="Metallo">Metallo</option>
+                <option value="Indifferenziata">Indifferenziata</option>
+            </select>
+            <div class="submit button convex" onclick="displayTrash(`sab`, `sabTrashes`)">OK</div>
+        </label>
     </div>
-    <label for="trashes">
-        <p>Lunedi: <span id="lun"></span></p>
-        <select name="trashes" id="lunTrashes" class="trashes" multiple="multiple">
-            <option value="carta">carta</option>
-            <option value="umido">umido</option>
-            <option value="plastica">plastica</option>
-        </select>
-        <button class="submit" onclick="displayTrash(`lun`, `lunTrashes`)">Print trashes</button>
-    </label>
-    <label for="trashes">
-        <p>Martedi: <span id="mar"></span></p>
-        <select name="trashes" id="marTrashes" class="trashes" multiple="multiple">
-            <option value="carta"> carta</option>
-            <option value="umido"> umido</option>
-            <option value="plastica"> plastica</option>
-        </select>
-        <button class="submit" onclick="displayTrash(`mar`, `marTrashes`)">Print trashes</button>
-    </label>
+
+
+
+
+
+
     <script type="text/javascript">
 
         function displayTrash(dayName, dayTrashes) {
 
-            let day;
-            let trashes;
             let selectedValues = [];
             for (let option of document.querySelector("#" + dayTrashes).options) {
                 if (option.selected) {
@@ -113,37 +146,6 @@
         //make it an executable function that takes day (and trash array?) as argument
     </script>
 
-    <div class="edit-panel invisible">
-        <div class="back button convex">
-            <i class="fa-solid fa-arrow-left"></i>
-        </div>
-        <h1 class="title">Modifica</h1>
-        <form>
-            <legend>Domenica:</legend>
-            <p class="input-test sm-thin">aaa</p>
-            <input type="text" class="test">
-            <div>
-                <label>
-                    <input type="checkbox" checked />
-                    Umido</label>
-            </div>
-            <div>
-                <label>
-                    <input type="checkbox" />
-                    Carta</label>
-            </div>
-            <div>
-                <label>
-                    <input type="checkbox" />
-                    Vetro</label>
-            </div>
-            <div>
-                <label>
-                    <input type="checkbox" />
-                    Metallo</label>
-            </div>
-        </form>
-    </div>
 
 
     <script src="./src/app.js"></script>
