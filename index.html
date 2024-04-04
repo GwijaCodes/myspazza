@@ -37,13 +37,14 @@
             <section class="item-info">
                 <p class="day-name sm-thin">Domenica:</p>
                 <p class="day-trash sm-bold">Plastica</p>
+
             </section>
             <section class="item-buttons">
                 <div class="button edit convex">
-                    <i class="fa-solid fa-pen"></i>
+                    E
                 </div>
                 <div class="button more convex">
-                    <i class="fa-solid fa-caret-down"></i>
+                    M
                 </div>
             </section>
         </div>
@@ -54,10 +55,10 @@
             </section>
             <section class="item-buttons">
                 <div class="button edit convex">
-                    <i class="fa-solid fa-pen"></i>
+                    E
                 </div>
                 <div class="button more convex">
-                    <i class="fa-solid fa-caret-down"></i>
+                    M
                 </div>
             </section>
         </div>
@@ -68,16 +69,51 @@
             </section>
             <section class="item-buttons">
                 <div class="button edit convex">
-                    <i class="fa-solid fa-pen"></i>
+                    E
                 </div>
                 <div class="button more convex">
-                    <i class="fa-solid fa-caret-down"></i>
+                    M
                 </div>
             </section>
         </div>
     </div>
+    <label for="trashes">
+        <p>Lunedi: <span id="lun"></span></p>
+        <select name="trashes" id="lunTrashes" class="trashes" multiple="multiple">
+            <option value="carta">carta</option>
+            <option value="umido">umido</option>
+            <option value="plastica">plastica</option>
+        </select>
+        <button class="submit" onclick="displayTrash(`lun`, `lunTrashes`)">Print trashes</button>
+    </label>
+    <label for="trashes">
+        <p>Martedi: <span id="mar"></span></p>
+        <select name="trashes" id="marTrashes" class="trashes" multiple="multiple">
+            <option value="carta"> carta</option>
+            <option value="umido"> umido</option>
+            <option value="plastica"> plastica</option>
+        </select>
+        <button class="submit" onclick="displayTrash(`mar`, `marTrashes`)">Print trashes</button>
+    </label>
+    <script type="text/javascript">
 
-    <div class="edit-panel">
+        function displayTrash(dayName, dayTrashes) {
+
+            let day;
+            let trashes;
+            let selectedValues = [];
+            for (let option of document.querySelector("#" + dayTrashes).options) {
+                if (option.selected) {
+                    selectedValues.push(option.value)
+                }
+            }
+            document.querySelector("#" + dayName).innerText = selectedValues;
+        }
+
+        //make it an executable function that takes day (and trash array?) as argument
+    </script>
+
+    <div class="edit-panel invisible">
         <div class="back button convex">
             <i class="fa-solid fa-arrow-left"></i>
         </div>
