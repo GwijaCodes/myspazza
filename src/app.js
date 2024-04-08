@@ -1,7 +1,8 @@
 //dati array
 const settimana = ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"];
 const mesi = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
-let raccolta = [...document.querySelectorAll('label p span')].map(el => el.textContent);
+let myDays = document.querySelectorAll('label p span');
+let raccolta = [...myDays].map(el => el.textContent);
 setTimeout(() => { }, 100)
 
 
@@ -14,11 +15,9 @@ let day = date.getDate();
 let oggi = document.querySelector('#oggi').innerHTML = `${weekday} ${day} ${month}`
 
 //mostra cosa buttare oggi e domani
-
-let spazza = raccolta[dayN];
-let spazzaText = document.querySelector('#spazzaText').innerHTML = spazza;
-let domani = document.querySelector('#spazzaDomani');
-//trashbin
+let today = document.querySelector('#today').innerText = `${raccolta[dayN]}`;
+let domani = document.querySelector('#tomorrow');
+    //trashbin
 const trashbin = document.querySelector('.trashbin');
 trashbin.style.backgroundPositionX = 1365 - (100 * dayN) + 'px';
 
