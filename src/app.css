@@ -40,11 +40,15 @@
 }
 
 .trashbin {
-  width: 100px;
+  width: 100vw;
+  height: 100px;
   aspect-ratio: 1/1;
+  margin: auto;
   margin-bottom: 10px;
-  background-image: url('../images/trashbins.png');
+  background: url('../images/trashbins.png');
   background-size: cover;
+  transition: background-position-x 0.2s ease;
+  background-position-x: 100px;
 }
 
 /*UTILITIES*/

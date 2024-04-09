@@ -48,7 +48,7 @@
                     <option value="Giorno Libero">Giorno Libero</option>
                 </select>
 
-                <div class="submit button convex done" onclick="hideDisplayTrash(`domEditPanel`)">Fatto</div>
+                <div class="submit button convex done" onclick="displayTrash(`dom`, `domTrashes`, `domEditPanel`)">Fatto</div>
 
             </div>
 
@@ -72,7 +72,7 @@
                     <option value="Giorno Libero">Giorno Libero</option>
                 </select>
 
-                <div class="submit button convex done" onclick="hideDisplayTrash(`lunEditPanel`)">Fatto</div>
+                <div class="submit button convex done" onclick="displayTrash(`lun`, `lunTrashes`, `lunEditPanel`)">Fatto</div>
 
             </div>
 
@@ -96,7 +96,7 @@
                     <option value="Giorno Libero">Giorno Libero</option>
                 </select>
 
-                <div class="submit button convex done" onclick="hideDisplayTrash(`marEditPanel`)">Fatto</div>
+                <div class="submit button convex done" onclick="displayTrash(`mar`, `marTrashes`, `marEditPanel`)">Fatto</div>
 
             </div>
 
@@ -120,7 +120,7 @@
                     <option value="Giorno Libero">Giorno Libero</option>
                 </select>
 
-                <div class="submit button convex done" onclick="hideDisplayTrash(`merEditPanel`)">Fatto</div>
+                <div class="submit button convex done" onclick="displayTrash(`mer`, `merTrashes`, `merEditPanel`)">Fatto</div>
 
             </div>
 
@@ -185,6 +185,7 @@
 
 
 
+    <script src="./src/app.js"></script>
 
 
     <script type="text/javascript">
@@ -199,24 +200,25 @@
                 }
             }
             document.querySelector("#" + dayName).innerText = selectedValues;
+            console.log(selectedValues)
+
             raccolta = [...document.querySelectorAll('label p span')].map(el => el.textContent)
             spazza = raccolta[dayN];
-            console.log(raccolta[dayN])
+            
         }
 
         function hideDisplayTrash(dayEditPanel) {
             document.querySelector("." + dayEditPanel).classList.toggle('invisible');
+            
 
         }
 
-        //make it an executable function that takes day (and trash array?) as argument
-
+        //swap hidedisplaytrash with showdisplaytrash or something like that
 
     </script>
 
 
 
-    <script src="./src/app.js"></script>
 </body>
 
 </html>

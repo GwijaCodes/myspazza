@@ -15,21 +15,36 @@ let oggi = document.querySelector('#oggi').innerHTML = `${weekday} ${day} ${mont
 let myDays = document.querySelectorAll('label p span');
 let raccolta = [...myDays].map(el => el.textContent);
 let today;
+const trashbin = document.querySelector('.trashbin');
+
 setInterval(() => {
-    today = document.querySelector('#today').innerHTML = 'Carta';
+    today = document.querySelector('#today').innerHTML = raccolta[dayN];
     if (dayN >= raccolta.length - 1) {
         domani.innerHTML = raccolta[0];
     } else {
         domani.innerHTML = raccolta[dayN + 1];
     }
 
-    switch (today) {
+    
+    switch (today) 
+    {
         case 'Plastica':
-            trashbin.style.backgroundPositionX = 700 - (100 * 3) + 'px';
+            trashbin.style.backgroundPositionX = 300 + 'px';
+            break;
         case 'Umido':
-            trashbin.style.backgroundPositionX = 700 - (100 * 2) + 'px';
+            trashbin.style.backgroundPositionX = 100 + 'px';
+            break;
         case 'Carta':
-            trashbin.style.backgroundPositionX = 700 - (100 * 4) + 'px';
+            trashbin.style.backgroundPositionX = 400 + 'px';
+            break;
+            case 'Vetro':
+            case 'Metallo':
+            trashbin.style.backgroundPositionX = 600 + 'px';
+            break;
+            case 'Indifferenziata':
+            trashbin.style.backgroundPositionX = 500 + 'px';
+            break;
+
 
     }
 
@@ -37,10 +52,10 @@ setInterval(() => {
 
 let domani = document.querySelector('#tomorrow');
 //trashbin
-const trashbin = document.querySelector('.trashbin');
 
-//loop da sabato a domenica
-
+//il bidone deve seguire il giorno corrente
+//ci sono dei bug nella selezione dei types
+//salvare le impostazioni scelte in memoria locale
 
 
 
