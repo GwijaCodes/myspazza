@@ -20,6 +20,7 @@
 
 <body>
     <div class="display">
+        <img class="trashbin-cover" src="./images/trashbin-cover.png" alt="">
         <div class="trashbin"></div>
         <div class="info">
             <h1 class="title" id="today">Spazza</h1>
@@ -48,7 +49,8 @@
                     <option value="Giorno Libero">Giorno Libero</option>
                 </select>
 
-                <div class="submit button convex done" onclick="displayTrash(`dom`, `domTrashes`, `domEditPanel`)">Fatto</div>
+                <div class="submit button convex done" onclick="displayTrash(`dom`, `domTrashes`, `domEditPanel`)">Fatto
+                </div>
 
             </div>
 
@@ -72,7 +74,8 @@
                     <option value="Giorno Libero">Giorno Libero</option>
                 </select>
 
-                <div class="submit button convex done" onclick="displayTrash(`lun`, `lunTrashes`, `lunEditPanel`)">Fatto</div>
+                <div class="submit button convex done" onclick="displayTrash(`lun`, `lunTrashes`, `lunEditPanel`)">Fatto
+                </div>
 
             </div>
 
@@ -96,7 +99,8 @@
                     <option value="Giorno Libero">Giorno Libero</option>
                 </select>
 
-                <div class="submit button convex done" onclick="displayTrash(`mar`, `marTrashes`, `marEditPanel`)">Fatto</div>
+                <div class="submit button convex done" onclick="displayTrash(`mar`, `marTrashes`, `marEditPanel`)">Fatto
+                </div>
 
             </div>
 
@@ -120,7 +124,8 @@
                     <option value="Giorno Libero">Giorno Libero</option>
                 </select>
 
-                <div class="submit button convex done" onclick="displayTrash(`mer`, `merTrashes`, `merEditPanel`)">Fatto</div>
+                <div class="submit button convex done" onclick="displayTrash(`mer`, `merTrashes`, `merEditPanel`)">Fatto
+                </div>
 
             </div>
 
@@ -131,51 +136,75 @@
 
         <label class="list-item" for="trashes">
             <p class="item-info sm-bold">Giovedi: <span class="sm-thin" id="gio">Carta</span></p>
-            <select name="trashes" id="gioTrashes" class="trashes invisible" multiple="multiple">
-                <option value="Vetro">Vetro</option>
-                <option value="Carta">Carta</option>
-                <option value="Umido">Umido</option>
-                <option value="Plastica">Plastica</option>
-                <option value="Metallo">Metallo</option>
-                <option value="Indifferenziata">Indifferenziata</option>
-                <option value="Giorno Libero">Giorno Libero</option>
+            <div class="gioEditPanel edit-panel invisible">
+                <h2 class="title">Modifica</h2>
+                <p class="sm-thin">Giovedi:</p>
+                <select name="trashes" id="gioTrashes" class="trashes" multiple="multiple">
+                    <option value="Vetro">Vetro</option>
+                    <option value="Carta">Carta</option>
+                    <option value="Umido">Umido</option>
+                    <option value="Plastica">Plastica</option>
+                    <option value="Metallo">Metallo</option>
+                    <option value="Indifferenziata">Indifferenziata</option>
+                    <option value="Giorno Libero">Giorno Libero</option>
+                </select>
 
-            </select>
-            <div class="submit button convex" onclick="displayTrash(`gio`, `gioTrashes`)">
+                <div class="submit button convex done" onclick="displayTrash(`gio`, `gioTrashes`, `gioEditPanel`)">Fatto
+                </div>
+
+            </div>
+
+            <div class="submit button convex" onclick="displayTrash(`gio`, `gioTrashes`, `gioEditPanel`)">
                 <i class="fa-solid fa-pen"></i>
             </div>
         </label>
 
         <label class="list-item" for="trashes">
             <p class="item-info sm-bold">Venerdi: <span class="sm-thin" id="ven">Umido, Metallo</span></p>
-            <select name="trashes" id="venTrashes" class="trashes invisible" multiple="multiple">
-                <option value="Vetro">Vetro</option>
-                <option value="Carta">Carta</option>
-                <option value="Umido">Umido</option>
-                <option value="Plastica">Plastica</option>
-                <option value="Metallo">Metallo</option>
-                <option value="Indifferenziata">Indifferenziata</option>
-                <option value="Giorno Libero">Giorno Libero</option>
+            <div class="venEditPanel edit-panel invisible">
+                <h2 class="title">Modifica</h2>
+                <p class="sm-thin">Venerdi:</p>
+                <select name="trashes" id="venTrashes" class="trashes" multiple="multiple">
+                    <option value="Vetro">Vetro</option>
+                    <option value="Carta">Carta</option>
+                    <option value="Umido">Umido</option>
+                    <option value="Plastica">Plastica</option>
+                    <option value="Metallo">Metallo</option>
+                    <option value="Indifferenziata">Indifferenziata</option>
+                    <option value="Giorno Libero">Giorno Libero</option>
+                </select>
 
-            </select>
-            <div class="submit button convex" onclick="displayTrash(`ven`, `venTrashes`)">
+                <div class="submit button convex done" onclick="displayTrash(`ven`, `venTrashes`, `venEditPanel`)">Fatto
+                </div>
+
+            </div>
+
+            <div class="submit button convex" onclick="displayTrash(`ven`, `venTrashes`, `venEditPanel`)">
                 <i class="fa-solid fa-pen"></i>
             </div>
         </label>
 
         <label class="list-item" for="trashes">
             <p class="item-info sm-bold">Sabato: <span class="sm-thin" id="sab">Giorno Libero</span></p>
-            <select name="trashes" id="sabTrashes" class="trashes invisible" multiple="multiple">
-                <option value="Vetro">Vetro</option>
-                <option value="Carta">Carta</option>
-                <option value="Umido">Umido</option>
-                <option value="Plastica">Plastica</option>
-                <option value="Metallo">Metallo</option>
-                <option value="Indifferenziata">Indifferenziata</option>
-                <option value="Giorno Libero">Giorno Libero</option>
+            <div class="sabEditPanel edit-panel invisible">
+                <h2 class="title">Modifica</h2>
+                <p class="sm-thin">Sabato:</p>
+                <select name="trashes" id="sabTrashes" class="trashes" multiple="multiple">
+                    <option value="Vetro">Vetro</option>
+                    <option value="Carta">Carta</option>
+                    <option value="Umido">Umido</option>
+                    <option value="Plastica">Plastica</option>
+                    <option value="Metallo">Metallo</option>
+                    <option value="Indifferenziata">Indifferenziata</option>
+                    <option value="Giorno Libero">Giorno Libero</option>
+                </select>
 
-            </select>
-            <div class="submit button convex" onclick="displayTrash(`sab`, `sabTrashes`)">
+                <div class="submit button convex done" onclick="displayTrash(`sab`, `sabTrashes`, `sabEditPanel`)">Fatto
+                </div>
+
+            </div>
+
+            <div class="submit button convex" onclick="displayTrash(`sab`, `sabTrashes`, `sabEditPanel`)">
                 <i class="fa-solid fa-pen"></i>
             </div>
         </label>
@@ -201,15 +230,16 @@
             }
             document.querySelector("#" + dayName).innerText = selectedValues;
             console.log(selectedValues)
-
             raccolta = [...document.querySelectorAll('label p span')].map(el => el.textContent)
             spazza = raccolta[dayN];
-            
+
+            localStorage.setItem("raccolta", JSON.stringify(raccolta));
+
         }
 
         function hideDisplayTrash(dayEditPanel) {
             document.querySelector("." + dayEditPanel).classList.toggle('invisible');
-            
+
 
         }
 

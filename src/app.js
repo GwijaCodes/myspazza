@@ -1,4 +1,5 @@
 //mostra data
+
 let date = new Date();
 let dayN = date.getDay();
 //mese e settimana in italiano
@@ -17,6 +18,20 @@ let raccolta = [...myDays].map(el => el.textContent);
 let today;
 const trashbin = document.querySelector('.trashbin');
 
+window.addEventListener('load', () => {
+    console.log('ready')
+    if (localStorage.getItem('raccolta') === null) {
+        raccolta = [...document.querySelectorAll('label p span')].map(el => el.textContent)
+        console.log('didnt find shit')
+    } else {
+        raccolta = JSON.parse(localStorage.getItem('raccolta'));
+        for (let i = 0; i < myDays.length; i++) {
+            myDays[i].textContent = raccolta[i];
+        }
+        console.log('found it')
+    }
+})
+
 setInterval(() => {
     today = document.querySelector('#today').innerHTML = raccolta[dayN];
     if (dayN >= raccolta.length - 1) {
@@ -25,9 +40,8 @@ setInterval(() => {
         domani.innerHTML = raccolta[dayN + 1];
     }
 
-    
-    switch (today) 
-    {
+
+    switch (today) {
         case 'Plastica':
             trashbin.style.backgroundPositionX = 300 + 'px';
             break;
@@ -37,13 +51,15 @@ setInterval(() => {
         case 'Carta':
             trashbin.style.backgroundPositionX = 400 + 'px';
             break;
-            case 'Vetro':
-            case 'Metallo':
+        case 'Vetro':
+        case 'Metallo':
             trashbin.style.backgroundPositionX = 600 + 'px';
             break;
-            case 'Indifferenziata':
+        case 'Indifferenziata':
             trashbin.style.backgroundPositionX = 500 + 'px';
             break;
+        case 'Giorno Libero':
+            trashbin.style.backgroundPositionX = 200 + 'px';
 
 
     }
