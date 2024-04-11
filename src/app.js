@@ -22,13 +22,11 @@ window.addEventListener('load', () => {
     console.log('ready')
     if (localStorage.getItem('raccolta') === null) {
         raccolta = [...document.querySelectorAll('label p span')].map(el => el.textContent)
-        console.log('didnt find shit')
     } else {
         raccolta = JSON.parse(localStorage.getItem('raccolta'));
         for (let i = 0; i < myDays.length; i++) {
             myDays[i].textContent = raccolta[i];
         }
-        console.log('found it')
     }
 })
 
@@ -43,23 +41,23 @@ setInterval(() => {
 
     switch (today) {
         case 'Plastica':
-            trashbin.style.backgroundPositionX = 300 + 'px';
+            trashbin.style.backgroundPositionX = 200 + 'px';
             break;
         case 'Umido':
-            trashbin.style.backgroundPositionX = 100 + 'px';
+            trashbin.style.backgroundPositionX = 0 + 'px';
             break;
         case 'Carta':
-            trashbin.style.backgroundPositionX = 400 + 'px';
+            trashbin.style.backgroundPositionX = 300 + 'px';
             break;
         case 'Vetro':
         case 'Metallo':
-            trashbin.style.backgroundPositionX = 600 + 'px';
-            break;
-        case 'Indifferenziata':
             trashbin.style.backgroundPositionX = 500 + 'px';
             break;
+        case 'Indifferenziata':
+            trashbin.style.backgroundPositionX = 400 + 'px';
+            break;
         case 'Giorno Libero':
-            trashbin.style.backgroundPositionX = 200 + 'px';
+            trashbin.style.backgroundPositionX = 100 + 'px';
 
 
     }
@@ -82,7 +80,6 @@ toggle.addEventListener('click', (e) => {
     e.stopPropagation();
     body.classList.toggle('active')
     switched = !switched;
-    console.log('switched')
     const toggled = document.querySelector('.dark-switch-toggle');
     switched ? (toggled.style.left = '100%', toggled.style.transform = 'translateX(-120%)') : (toggled.style.left = '0%', toggled.style.transform = 'translateX(20%)')
 });
