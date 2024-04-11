@@ -10,6 +10,8 @@ let month = mesi[date.getMonth()];
 //data di oggi in italiano
 let day = date.getDate();
 let oggi = document.querySelector('#oggi').innerHTML = `${weekday} ${day} ${month}`
+let domani = document.querySelector('#tomorrow');
+
 
 //mostra cosa buttare oggi e domani
 
@@ -17,8 +19,11 @@ let myDays = document.querySelectorAll('label p span');
 let raccolta = [...myDays].map(el => el.textContent);
 let today;
 const trashbin = document.querySelector('.trashbin');
+let switched = false;
 
 window.addEventListener('load', () => {
+
+
     console.log('ready')
     if (localStorage.getItem('raccolta') === null) {
         raccolta = [...document.querySelectorAll('label p span')].map(el => el.textContent)
@@ -27,6 +32,13 @@ window.addEventListener('load', () => {
         for (let i = 0; i < myDays.length; i++) {
             myDays[i].textContent = raccolta[i];
         }
+    }
+
+    if (localStorage.getItem('isDarkMode') === null) {
+        document.querySelector('body').classList.remove('active')
+    } else {
+        document.querySelector('body').classList.add('active')
+
     }
 })
 
@@ -38,7 +50,7 @@ setInterval(() => {
         domani.innerHTML = raccolta[dayN + 1];
     }
 
-
+    //visualizza bidone
     switch (today) {
         case 'Plastica':
             trashbin.style.backgroundPositionX = 200 + 'px';
@@ -58,30 +70,28 @@ setInterval(() => {
             break;
         case 'Giorno Libero':
             trashbin.style.backgroundPositionX = 100 + 'px';
-
-
     }
 
 }, 200)
 
-let domani = document.querySelector('#tomorrow');
-//trashbin
-
-//il bidone deve seguire il giorno corrente
-//ci sono dei bug nella selezione dei types
-//salvare le impostazioni scelte in memoria locale
+if (localStorage.getItem('isDarkMode') === 'true') {
+    document.querySelector('body').classList.add('active');
+    switched = true;
+    document.querySelector('.dark-switch-toggle').style.transform = 'translateX(180%)'
+} else {
+    switched = false
+    document.querySelector('body').classList.remove('active');
+}
 
 
 //dark mode switch
-let switched = false;
 const toggle = document.querySelector('.toggle-dark');
-const body = document.querySelector('body');
-toggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    body.classList.toggle('active')
+toggle.addEventListener('click', () => {
     switched = !switched;
+    document.querySelector('body').classList.toggle('active');
     const toggled = document.querySelector('.dark-switch-toggle');
     switched ? (toggled.style.left = '100%', toggled.style.transform = 'translateX(-120%)') : (toggled.style.left = '0%', toggled.style.transform = 'translateX(20%)')
+    localStorage.setItem('isDarkMode', true);
 });
 
 
