@@ -25,6 +25,11 @@ window.addEventListener('load', () => {
 
 
     console.log('ready')
+
+    if (JSON.parse(localStorage.getItem('isDarkMode')) === true){
+        document.querySelector('body').classList.add('active');
+    }
+
     if (localStorage.getItem('raccolta') === null) {
         raccolta = [...document.querySelectorAll('label p span')].map(el => el.textContent)
     } else {
@@ -34,12 +39,7 @@ window.addEventListener('load', () => {
         }
     }
 
-    if (localStorage.getItem('isDarkMode') === null) {
-        document.querySelector('body').classList.remove('active')
-    } else {
-        document.querySelector('body').classList.add('active')
-
-    }
+    
 })
 
 setInterval(() => {
@@ -74,24 +74,18 @@ setInterval(() => {
 
 }, 200)
 
-if (localStorage.getItem('isDarkMode') === 'true') {
-    document.querySelector('body').classList.add('active');
-    switched = true;
-    document.querySelector('.dark-switch-toggle').style.transform = 'translateX(180%)'
-} else {
-    switched = false
-    document.querySelector('body').classList.remove('active');
+//dark mode
+let isDarkMode = false;
+
+function darkMode(){
+    isDarkMode = !isDarkMode;
+    console.log(isDarkMode)
+
+    isDarkMode ? document.querySelector('body').classList.add('active') :document.querySelector('body').classList.remove('active');
+    localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode))
 }
 
-
-//dark mode switch
-const toggle = document.querySelector('.toggle-dark');
-toggle.addEventListener('click', () => {
-    switched = !switched;
-    document.querySelector('body').classList.toggle('active');
-    const toggled = document.querySelector('.dark-switch-toggle');
-    switched ? (toggled.style.left = '100%', toggled.style.transform = 'translateX(-120%)') : (toggled.style.left = '0%', toggled.style.transform = 'translateX(20%)')
-    localStorage.setItem('isDarkMode', true);
-});
+//if (localStorage.getItem('isDarkMode') === 'true')
+    //localStorage.setItem('isDarkMode', true);
 
 

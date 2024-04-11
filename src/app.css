@@ -316,4 +316,8 @@ option:active {
     -webkit-appearance: none;
     appearance: none;
   }
+
+  .dark-switch-toggle{
+    transform: translateX(180%);
+  }
 }
