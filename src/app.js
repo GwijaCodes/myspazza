@@ -74,4 +74,17 @@ let domani = document.querySelector('#tomorrow');
 //salvare le impostazioni scelte in memoria locale
 
 
+//dark mode switch
+let switched = false;
+const toggle = document.querySelector('.toggle-dark');
+const body = document.querySelector('body');
+toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    body.classList.toggle('active')
+    switched = !switched;
+    console.log('switched')
+    const toggled = document.querySelector('.dark-switch-toggle');
+    switched ? (toggled.style.left = '100%', toggled.style.transform = 'translateX(-120%)') : (toggled.style.left = '0%', toggled.style.transform = 'translateX(20%)')
+});
+
 
