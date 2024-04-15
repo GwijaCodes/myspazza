@@ -288,6 +288,7 @@ option:active {
   width: 100%;
   font-size: 12px;
 }
+
 /*good job*/
 
 /*SEARCH PANEL*/
@@ -309,7 +310,7 @@ option:active {
   gap: 10px;
 }
 
-.search-btn{
+.search-btn {
   position: fixed;
   top: 20px;
   left: calc(100vw - 30px);
@@ -320,7 +321,7 @@ option:active {
   height: 30px;
 }
 
-.search-content{
+.search-content {
   width: 80%;
   padding-top: 40px;
   display: flex;
@@ -329,8 +330,9 @@ option:active {
   gap: 10px;
 }
 
-.search-content input{
+.search-content input {
   width: 100%;
+  height: fit-content;
   border: 0;
   padding: 2%;
   border-radius: 20px;

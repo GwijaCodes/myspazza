@@ -247,12 +247,27 @@
     </div>
     <div class="search-panel convex invisible">
         <div class="search-content">
-            <input type="search" class="concave" placeholder="Cerca un rifiuto...">
-            <p class="mysearch sm-thin">Bottiglia in plastica va in:</p>
+            <form>
+                <input type="search" id="searchInput" class="concave" placeholder="Cerca un rifiuto...">
+                <ul id="lista-umido" class="list convex">
+                    <h4>Umido</h4>
+                    <li>scarti di cucina</li>
+                    <li>alimenti scaduti o avariati</li>
+                </ul>
+                <ul id="lista-indifferenziata" class="list convex">
+                    <h4>Indifferenziata</h4>
+                    <li>giocattoli rotti</li>
+                    <li>pannolini o assorbenti</li>
+                </ul>
+            </form>
+
+            <p class="mysearch sm-thin"></p>
             <h3 class="search-result title">Bidone della Plastica, Mercoledi</h3>
+
+
+
         </div>
     </div>
-
 
 
 
@@ -260,6 +275,30 @@
 
 
     <script type="text/javascript">
+
+
+        const searchInput = document.getElementById('searchInput');
+        const list = document.querySelectorAll('.list');
+        const items = document.getElementsByTagName('li');
+        const mysearch = document.querySelector('.mysearch')
+        const searchResult = document.querySelector('.search-result')
+
+        searchInput.addEventListener('input', function () {
+            const searchValue = searchInput.value.toLowerCase();
+            searchValue != '' ? mysearch.innerText = searchInput.value + ' va in...' : mysearch.innerText = ''
+
+            for (let i = 0; i < items.length; i++) {
+                const item = items[i];
+                const itemName = item.textContent.toLowerCase();
+
+                if (itemName.includes(searchValue)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            }
+        });
+
 
 
         function displayTrash(dayName, dayTrashes, dayEditPanel) {
@@ -282,7 +321,7 @@
             document.querySelector('.' + thisPanel).classList.add('invisible')
         }
 
-        function displaySearchPanel(){
+        function displaySearchPanel() {
             document.querySelector('.search-panel').classList.toggle('invisible');
             document.querySelector('.search-btn i').classList.toggle('fa-xmark')
         }
