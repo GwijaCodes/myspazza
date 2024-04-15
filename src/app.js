@@ -1,5 +1,7 @@
-//mostra data
+//git push -u myspazza master
+//git push myspazza master
 
+//mostra data
 let date = new Date();
 let dayN = date.getDay();
 //mese e settimana in italiano
