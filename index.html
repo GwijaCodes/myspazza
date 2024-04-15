@@ -30,8 +30,8 @@
     </div>
     <div class="tomorrow">
         <div class="domani concave container">
-            <p class="sm-thin">Domani:</p>
-            <p class="sm-bold" id="tomorrow">...</p>
+            <p class="sm-bold">Domani:</p>
+            <p class="sm-thin" id="tomorrow">...</p>
         </div>
     </div>
     <div class="list">
@@ -52,11 +52,14 @@
 
                 <div class="submit button convex done" onclick="displayTrash(`dom`, `domTrashes`, `domEditPanel`)">Fatto
                 </div>
+                <div class="button convex back" onclick="hidePanel(`domEditPanel`)">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
 
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`dom`, `domTrashes`, `domEditPanel`)">
-                <i class="fa-solid fa-pen"></i>
+                <i class="fa-regular fa-pen-to-square"></i>
             </div>
         </label>
 
@@ -77,11 +80,14 @@
 
                 <div class="submit button convex done" onclick="displayTrash(`lun`, `lunTrashes`, `lunEditPanel`)">Fatto
                 </div>
+                <div class="button convex back" onclick="hidePanel(`lunEditPanel`)">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
 
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`lun`, `lunTrashes`, `lunEditPanel`)">
-                <i class="fa-solid fa-pen"></i>
+                <i class="fa-regular fa-pen-to-square"></i>
             </div>
         </label>
 
@@ -102,11 +108,14 @@
 
                 <div class="submit button convex done" onclick="displayTrash(`mar`, `marTrashes`, `marEditPanel`)">Fatto
                 </div>
+                <div class="button convex back" onclick="hidePanel(`marEditPanel`)">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
 
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`mar`, `marTrashes`, `marEditPanel`)">
-                <i class="fa-solid fa-pen"></i>
+                <i class="fa-regular fa-pen-to-square"></i>
             </div>
         </label>
 
@@ -127,11 +136,14 @@
 
                 <div class="submit button convex done" onclick="displayTrash(`mer`, `merTrashes`, `merEditPanel`)">Fatto
                 </div>
+                <div class="button convex back" onclick="hidePanel(`merEditPanel`)">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
 
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`mer`, `merTrashes`, `merEditPanel`)">
-                <i class="fa-solid fa-pen"></i>
+                <i class="fa-regular fa-pen-to-square"></i>
             </div>
         </label>
 
@@ -152,11 +164,14 @@
 
                 <div class="submit button convex done" onclick="displayTrash(`gio`, `gioTrashes`, `gioEditPanel`)">Fatto
                 </div>
+                <div class="button convex back" onclick="hidePanel(`gioEditPanel`)">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
 
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`gio`, `gioTrashes`, `gioEditPanel`)">
-                <i class="fa-solid fa-pen"></i>
+                <i class="fa-regular fa-pen-to-square"></i>
             </div>
         </label>
 
@@ -177,11 +192,14 @@
 
                 <div class="submit button convex done" onclick="displayTrash(`ven`, `venTrashes`, `venEditPanel`)">Fatto
                 </div>
+                <div class="button convex back" onclick="hidePanel(`venEditPanel`)">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
 
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`ven`, `venTrashes`, `venEditPanel`)">
-                <i class="fa-solid fa-pen"></i>
+                <i class="fa-regular fa-pen-to-square"></i>
             </div>
         </label>
 
@@ -202,11 +220,14 @@
 
                 <div class="submit button convex done" onclick="displayTrash(`sab`, `sabTrashes`, `sabEditPanel`)">Fatto
                 </div>
+                <div class="button convex back" onclick="hidePanel(`sabEditPanel`)">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
 
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`sab`, `sabTrashes`, `sabEditPanel`)">
-                <i class="fa-solid fa-pen"></i>
+                <i class="fa-regular fa-pen-to-square"></i>
             </div>
         </label>
     </div>
@@ -216,9 +237,13 @@
             <div class="dark-switch-toggle convex"></div>
         </div>
         <div class="switch-icons">
-            <i class="fa-solid fa-sun"></i>
-            <i class="fa-solid fa-moon"></i>
+            <i class="fa-regular fa-sun"></i>
+            <i class="fa-regular fa-moon"></i>
         </div>
+    </div>
+
+    <div class="search">
+        <i class="fa-solid fa-magnifying-glass"></i>
     </div>
 
 
@@ -239,12 +264,15 @@
                 }
             }
             document.querySelector("#" + dayName).innerText = selectedValues;
-            console.log(selectedValues)
             raccolta = [...document.querySelectorAll('label p span')].map(el => el.textContent)
             spazza = raccolta[dayN];
 
             localStorage.setItem("raccolta", JSON.stringify(raccolta));
 
+        }
+
+        function hidePanel(thisPanel) {
+            document.querySelector('.' + thisPanel).classList.add('invisible')
         }
 
 

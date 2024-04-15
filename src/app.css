@@ -46,8 +46,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  padding-top: 10vh;
+  gap: 12px;
+  padding-top: 6vh;
   transition: background-color .2s ease;
 }
 
@@ -100,7 +100,7 @@ body {
 }
 
 .sm-bold {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
 }
 
@@ -129,6 +129,11 @@ body {
 }
 
 /*LIST ITEM*/
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+}
 
 .list-item {
   display: flex;
@@ -214,6 +219,12 @@ select {
   align-self: flex-end;
 }
 
+.back {
+  position: fixed;
+  top: 2%;
+  left: 6%;
+}
+
 option {
   padding: 10px;
   font-size: 12px;
@@ -277,6 +288,17 @@ option:active {
   width: 100%;
 }
 
+/*SEARCH BAR*/
+
+.search {
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  position: fixed;
+  top: 3%;
+  left: 88%;
+}
+
 .active {
   --light: #353535;
   --dark: #beb9b9;
@@ -317,7 +339,7 @@ option:active {
     appearance: none;
   }
 
-  .dark-switch-toggle{
+  .dark-switch-toggle {
     transform: translateX(180%);
   }
 }

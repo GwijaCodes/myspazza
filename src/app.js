@@ -19,14 +19,13 @@ let myDays = document.querySelectorAll('label p span');
 let raccolta = [...myDays].map(el => el.textContent);
 let today;
 const trashbin = document.querySelector('.trashbin');
-let switched = false;
 
 window.addEventListener('load', () => {
 
 
     console.log('ready')
 
-    if (JSON.parse(localStorage.getItem('isDarkMode')) === true){
+    if (JSON.parse(localStorage.getItem('isDarkMode')) === true) {
         document.querySelector('body').classList.add('active');
     }
 
@@ -39,7 +38,7 @@ window.addEventListener('load', () => {
         }
     }
 
-    
+
 })
 
 setInterval(() => {
@@ -77,15 +76,15 @@ setInterval(() => {
 //dark mode
 let isDarkMode = false;
 
-function darkMode(){
+function darkMode() {
     isDarkMode = !isDarkMode;
     console.log(isDarkMode)
 
-    isDarkMode ? document.querySelector('body').classList.add('active') :document.querySelector('body').classList.remove('active');
+    isDarkMode ? document.querySelector('body').classList.add('active') : document.querySelector('body').classList.remove('active');
     localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode))
 }
 
 //if (localStorage.getItem('isDarkMode') === 'true')
-    //localStorage.setItem('isDarkMode', true);
+//localStorage.setItem('isDarkMode', true);
 
 
