@@ -242,8 +242,15 @@
         </div>
     </div>
 
-    <div class="search">
-        <i class="fa-solid fa-magnifying-glass"></i>
+    <div class="search-btn" onclick="displaySearchPanel()">
+        <i class="fa-solid fa-magnifying-glass search-btn"></i>
+    </div>
+    <div class="search-panel convex invisible">
+        <div class="search-content">
+            <input type="search" class="concave" placeholder="Cerca un rifiuto...">
+            <p class="mysearch sm-thin">Bottiglia in plastica va in:</p>
+            <h3 class="search-result title">Bidone della Plastica, Mercoledi</h3>
+        </div>
     </div>
 
 
@@ -273,6 +280,11 @@
 
         function hidePanel(thisPanel) {
             document.querySelector('.' + thisPanel).classList.add('invisible')
+        }
+
+        function displaySearchPanel(){
+            document.querySelector('.search-panel').classList.toggle('invisible');
+            document.querySelector('.search-btn i').classList.toggle('fa-xmark')
         }
 
 
