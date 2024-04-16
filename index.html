@@ -245,14 +245,30 @@
     <div class="search-btn" onclick="displaySearchPanel()">
         <i class="fa-solid fa-magnifying-glass search-btn"></i>
     </div>
-    <div class="search-panel convex invisible">
+    <div class="search-panel convex">
         <div class="search-content">
-            <input type="search" class="concave" placeholder="Cerca un rifiuto...">
-            <p class="mysearch sm-thin">Bottiglia in plastica va in:</p>
+            <h2 class="title">Cerca rifiuti</h2>
+            <form>
+                <input type="search" id="searchInput" placeholder="Cerca un rifiuto...">
+                <p class="mysearch sm-thin"></p>
+                <ul id="lista-umido" class="list convex">
+                    <h4>Umido</h4>
+                    <li>scarti di cucina</li>
+                    <li>alimenti scaduti o avariati</li>
+                </ul>
+                <ul id="lista-indifferenziata" class="list convex">
+                    <h4>Indifferenziata</h4>
+                    <li>giocattoli rotti</li>
+                    <li>pannolini o assorbenti</li>
+                </ul>
+            </form>
+
             <h3 class="search-result title">Bidone della Plastica, Mercoledi</h3>
         </div>
+        <div class="button convex back" onclick="hidePanel(`search-panel`)">
+            <i class="fa-solid fa-arrow-left"></i>
+        </div>
     </div>
-
 
 
 
@@ -262,12 +278,47 @@
     <script type="text/javascript">
 
 
+        const searchInput = document.getElementById('searchInput');
+        const list = document.querySelectorAll('.list');
+        const items = document.getElementsByTagName('li');
+        const mysearch = document.querySelector('.mysearch')
+        const searchResult = document.querySelector('.search-result')
+
+        searchInput.addEventListener('input', function () {
+            const searchValue = searchInput.value.toLowerCase();
+            searchValue != '' ? mysearch.innerText = searchInput.value + ' va in...' : mysearch.innerText = ''
+
+            for (let i = 0; i < items.length; i++) {
+                const item = items[i];
+                const itemName = item.textContent.toLowerCase();
+
+                if (itemName.includes(searchValue)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            }
+        });
+
+
+        window.onmousedown = function (e) {
+            var el = e.target;
+            if (el.tagName.toLowerCase() == 'option' && el.parentNode.hasAttribute('multiple')) {
+                e.preventDefault();
+
+                if (el.hasAttribute('selected')) el.removeAttribute('selected');
+                else el.setAttribute('selected', '');
+
+                var select = el.parentNode.cloneNode(true);
+                el.parentNode.parentNode.replaceChild(select, el.parentNode);
+            }
+        }
         function displayTrash(dayName, dayTrashes, dayEditPanel) {
             document.querySelector('.' + dayEditPanel).classList.toggle('invisible');
             let selectedValues = [];
             for (let option of document.querySelector("#" + dayTrashes).options) {
                 if (option.selected) {
-                    selectedValues.push(option.value)
+                    selectedValues.push(' ' + option.value)
                 }
             }
             document.querySelector("#" + dayName).innerText = selectedValues;
@@ -282,9 +333,8 @@
             document.querySelector('.' + thisPanel).classList.add('invisible')
         }
 
-        function displaySearchPanel(){
+        function displaySearchPanel() {
             document.querySelector('.search-panel').classList.toggle('invisible');
-            document.querySelector('.search-btn i').classList.toggle('fa-xmark')
         }
 
 
