@@ -297,9 +297,11 @@
                 const itemName = item.textContent.toLowerCase();
 
                 if (itemName.includes(searchValue)) {
-                    item.style.display = 'block';
+                    console.log('found iiiiit')
                 } else {
-                    item.style.display = 'none';
+                    console.log()
+                    const aiuto = document.querySelector(`ul:has(${item.value})`);
+                    console.log(aiuto)
                 }
             }
         });
