@@ -255,7 +255,7 @@ option:active {
 
 /*DARK MODE TOGGLE*/
 .toggle-dark {
-  width: 50px;
+  width: 40px;
   height: 20px;
   position: fixed;
   top: 2%;
@@ -294,28 +294,29 @@ option:active {
 /*SEARCH PANEL*/
 
 .search-panel {
-  width: 98vw;
-  height: fit-content;
-  padding: 20px 0;
-  border-radius: 0 0 20px 20px;
-  background-color: var(--light);
+  background: var(--light);
+  color: var(--dark);
+  box-shadow: 2px 2px 6px #b3b3b3,
+    -2px -2px 6px #ffffff;
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 10%;
+  z-index: 100;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 10px;
 }
 
 .search-btn {
   position: fixed;
-  top: 20px;
-  left: calc(100vw - 30px);
+  top: 2%;
+  right: 6%;
+  display: grid;
+  place-content: center;
   font-size: 12px;
-  z-index: 200;
   cursor: pointer;
   width: 30px;
   height: 30px;
@@ -335,8 +336,9 @@ option:active {
   height: fit-content;
   border: 0;
   padding: 2%;
-  border-radius: 20px;
   outline: none;
+  border-bottom: 2px solid var(--dark);
+  background-color: transparent;
 }
 
 .active {
@@ -380,6 +382,6 @@ option:active {
   }
 
   .dark-switch-toggle {
-    transform: translateX(180%);
+    transform: translateX(130%);
   }
 }
