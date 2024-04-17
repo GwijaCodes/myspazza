@@ -50,10 +50,6 @@ body {
   transition: background-color .2s ease;
 }
 
-li{
-  list-style-type: none;
-}
-
 @media (max-width: 500px) {
   body {
     width: 100vw;
@@ -259,7 +255,7 @@ option:active {
 
 /*DARK MODE TOGGLE*/
 .toggle-dark {
-  width: 40px;
+  width: 50px;
   height: 20px;
   position: fixed;
   top: 2%;
@@ -292,47 +288,39 @@ option:active {
   width: 100%;
   font-size: 12px;
 }
-
 /*good job*/
 
 /*SEARCH PANEL*/
 
 .search-panel {
-  background: var(--light);
-  color: var(--dark);
-  box-shadow: 2px 2px 6px #b3b3b3,
-    -2px -2px 6px #ffffff;
+  width: 98vw;
+  height: fit-content;
+  padding: 20px 0;
+  border-radius: 0 0 20px 20px;
+  background-color: var(--light);
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  padding: 10%;
-  z-index: 100;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+  gap: 10px;
 }
 
-.search-panel .title{
-  position: absolute;
-  top: 10vh;
-  left: 6%;
-}
-
-.search-btn {
+.search-btn{
   position: fixed;
-  top: 2%;
-  right: 6%;
-  display: grid;
-  place-content: center;
+  top: 20px;
+  left: calc(100vw - 30px);
   font-size: 12px;
+  z-index: 200;
   cursor: pointer;
   width: 30px;
   height: 30px;
 }
 
-.search-content {
+.search-content{
   width: 80%;
   padding-top: 40px;
   display: flex;
@@ -341,39 +329,12 @@ option:active {
   gap: 10px;
 }
 
-.search-content input {
+.search-content input{
   width: 100%;
-  height: fit-content;
   border: 0;
   padding: 2%;
+  border-radius: 20px;
   outline: none;
-  border-bottom: 2px solid var(--dark);
-  background-color: transparent;
-}
-
-.infoList{
-  padding: 10px;
-  border-radius: 10px;
-  width: 80px;
-  height: 50px;
-  display: grid;
-  place-content: center;
-}
-
-li{
-  font-size: 10px;
-}
-
-.liste{
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.open{
-  width: 100%;
 }
 
 .active {
@@ -417,6 +378,6 @@ li{
   }
 
   .dark-switch-toggle {
-    transform: translateX(130%);
+    transform: translateX(180%);
   }
 }

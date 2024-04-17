@@ -245,31 +245,14 @@
     <div class="search-btn" onclick="displaySearchPanel()">
         <i class="fa-solid fa-magnifying-glass search-btn"></i>
     </div>
-    <div class="search-panel convex">
-        <h2 class="title">Cerca rifiuti</h2>
+    <div class="search-panel convex invisible">
         <div class="search-content">
-            <form>
-                <input type="search" id="searchInput" placeholder="Cerca un rifiuto...">
-                <p class="mysearch sm-thin"></p>
-                <div class="liste">
-                     <ul id="lista-umido" class="infoList convex" onclick="showInfo('lista-umido')">
-                    <h4 class="sm-thin">Umido</h4>
-                    <li class="invisible">scarti di cucina</li>
-                    <li class="invisible">alimenti scaduti o avariati</li>
-                    </ul>
-                    <ul id="lista-indifferenziata" class="infoList convex" onclick="showInfo('lista-indifferenziata')">
-                        <h4 class="sm-thin">Indifferenziata</h4>
-                        <li class="invisible">giocattoli rotti</li>
-                        <li class="invisible">pannolini o assorbenti</li>
-                    </ul>
-                </div>
-               
-            </form>
-        </div>
-        <div class="button convex back" onclick="hidePanel(`search-panel`)">
-            <i class="fa-solid fa-arrow-left"></i>
+            <input type="search" class="concave" placeholder="Cerca un rifiuto...">
+            <p class="mysearch sm-thin">Bottiglia in plastica va in:</p>
+            <h3 class="search-result title">Bidone della Plastica, Mercoledi</h3>
         </div>
     </div>
+
 
 
 
@@ -277,55 +260,14 @@
 
 
     <script type="text/javascript">
-        function showInfo(thisList){
-        document.querySelector('#' + thisList + ' li').classList.toggle('invisible');
-        document.querySelector('#' + thisList).classList.toggle('open');
-        }
-
-        //RICERCA RIFIUTI
-        const searchInput = document.getElementById('searchInput');
-        const items = document.getElementsByTagName('li');
-        const mysearch = document.querySelector('.mysearch')
-        const searchResult = document.querySelector('.search-result')
-
-        searchInput.addEventListener('input', function () {
-            const searchValue = searchInput.value.toLowerCase();
-            searchValue != '' ? mysearch.innerText = searchInput.value + ' va in...' : mysearch.innerText = ''
-
-            for (let i = 0; i < items.length; i++) {
-                const item = items[i];
-                const itemName = item.textContent.toLowerCase();
-
-                if (itemName.includes(searchValue)) {
-                    console.log('found iiiiit')
-                } else {
-                    console.log()
-                    const aiuto = document.querySelector(`ul:has(${item.value})`);
-                    console.log(aiuto)
-                }
-            }
-        });
 
 
-        //select without the need to hold down ctrl
-        window.onmousedown = function (e) {
-            var el = e.target;
-            if (el.tagName.toLowerCase() == 'option' && el.parentNode.hasAttribute('multiple')) {
-                e.preventDefault();
-
-                if (el.hasAttribute('selected')) el.removeAttribute('selected');
-                else el.setAttribute('selected', '');
-
-                var select = el.parentNode.cloneNode(true);
-                el.parentNode.parentNode.replaceChild(select, el.parentNode);
-            }
-        }
         function displayTrash(dayName, dayTrashes, dayEditPanel) {
             document.querySelector('.' + dayEditPanel).classList.toggle('invisible');
             let selectedValues = [];
             for (let option of document.querySelector("#" + dayTrashes).options) {
                 if (option.selected) {
-                    selectedValues.push(' ' + option.value)
+                    selectedValues.push(option.value)
                 }
             }
             document.querySelector("#" + dayName).innerText = selectedValues;
@@ -340,8 +282,9 @@
             document.querySelector('.' + thisPanel).classList.add('invisible')
         }
 
-        function displaySearchPanel() {
+        function displaySearchPanel(){
             document.querySelector('.search-panel').classList.toggle('invisible');
+            document.querySelector('.search-btn i').classList.toggle('fa-xmark')
         }
 
 
