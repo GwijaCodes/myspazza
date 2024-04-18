@@ -245,7 +245,7 @@
     <div class="search-btn" onclick="displaySearchPanel()">
         <i class="fa-solid fa-magnifying-glass search-btn"></i>
     </div>
-    <div class="search-panel convex">
+    <div class="search-panel invisible">
         <h2 class="title">Cerca rifiuti</h2>
         <div class="search-content">
             <input type="search" id="searchInput" placeholder="Cerca un rifiuto...">
@@ -347,7 +347,7 @@
         //select without the need to hold down ctrl
         window.onmousedown = function (e) {
             var el = e.target;
-            if (el.tagName.toLowerCase() == 'option' && el.parentNode.hasAttribute('multiple')) {
+            if (el.tagName.toLowerCase() == 'option') {
                 e.preventDefault();
 
                 if (el.hasAttribute('selected')) el.removeAttribute('selected');
@@ -357,6 +357,8 @@
                 el.parentNode.parentNode.replaceChild(select, el.parentNode);
             }
         }
+
+
         function displayTrash(dayName, dayTrashes, dayEditPanel) {
             document.querySelector('.' + dayEditPanel).classList.toggle('invisible');
             let selectedValues = [];
@@ -368,7 +370,6 @@
             document.querySelector("#" + dayName).innerText = selectedValues;
             raccolta = [...document.querySelectorAll('label p span')].map(el => el.textContent)
             spazza = raccolta[dayN];
-
             localStorage.setItem("raccolta", JSON.stringify(raccolta));
 
         }

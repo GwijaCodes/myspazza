@@ -8,11 +8,7 @@
   aspect-ratio: 1/1;
   margin: auto;
   margin-bottom: 10px;
-  background: url('../images/trashbins.png');
-  background-size: cover;
-  transition: background-position-x 0.2s ease;
-  background-position-x: 0px;
-  background-position-y: center;
+  background: url('../images/bin-brown.png');
 }
 
 .trashbin-cover {
@@ -192,7 +188,8 @@ li {
 
 
 .edit-panel {
-  background: var(--light);
+  background: transparent;
+  backdrop-filter: blur(16px);
   color: var(--dark);
   box-shadow: 2px 2px 6px #b3b3b3,
     -2px -2px 6px #ffffff;
@@ -296,7 +293,8 @@ option:active {
 /*SEARCH PANEL*/
 
 .search-panel {
-  background: var(--light);
+  background: transparent;
+  backdrop-filter: blur(16px);
   color: var(--dark);
   box-shadow: 2px 2px 6px #b3b3b3,
     -2px -2px 6px #ffffff;
@@ -387,12 +385,6 @@ option:active {
     background: #353535;
     box-shadow: 5px 5px 6px #1e1e1e,
       -5px -5px 6px #4c4c4c;
-  }
-
-  .edit-panel {
-    background-color: #353535;
-    box-shadow: 2px 2px 6px #212121,
-      -2px -2px 6px #5d5d5d;
   }
 
   option {

@@ -42,7 +42,7 @@ window.addEventListener('load', () => {
 })
 
 setInterval(() => {
-    today = document.querySelector('#today').innerHTML = raccolta[dayN];
+    today = document.querySelector('#today').innerText = raccolta[dayN];
     if (dayN >= raccolta.length - 1) {
         domani.innerHTML = raccolta[0];
     } else {
@@ -50,28 +50,29 @@ setInterval(() => {
     }
 
     //visualizza bidone
+
     switch (today) {
-        case 'Plastica':
-            trashbin.style.backgroundPositionX = 200 + 'px';
+        case ' Plastica':
+            trashbin.style.background = 'url(../images/bin-yellow.png)';
             break;
-        case 'Umido':
-            trashbin.style.backgroundPositionX = 0 + 'px';
+        case ' Umido':
+            trashbin.style.background = 'url(../images/bin-brown.png)';
             break;
-        case 'Carta':
-            trashbin.style.backgroundPositionX = 300 + 'px';
+        case ' Carta':
+            trashbin.style.background = 'url(../images/bin-bluee.png)';
             break;
-        case 'Vetro':
-        case 'Metallo':
-            trashbin.style.backgroundPositionX = 500 + 'px';
+        case ' Vetro':
+        case ' Metallo':
+            trashbin.style.background = 'url(../images/bin-green.png)';
             break;
-        case 'Indifferenziata':
-            trashbin.style.backgroundPositionX = 400 + 'px';
+        case ' Indifferenziata':
+            trashbin.style.background = 'url(../images/bin-grey.png)';
             break;
-        case 'Giorno Libero':
-            trashbin.style.backgroundPositionX = 100 + 'px';
+        case ' Giorno Libero':
+            trashbin.style.background = 'url(../images/bin-grey.png)';
     }
 
-}, 200)
+}, 500)
 
 //dark mode
 let isDarkMode = false;
