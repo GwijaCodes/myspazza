@@ -248,27 +248,67 @@
     <div class="search-panel convex">
         <h2 class="title">Cerca rifiuti</h2>
         <div class="search-content">
-            <form>
-                <input type="search" id="searchInput" placeholder="Cerca un rifiuto...">
-                <p class="mysearch sm-thin"></p>
-                <div class="liste">
-                     <ul id="lista-umido" class="infoList convex" onclick="showInfo('lista-umido')">
+            <input type="search" id="searchInput" placeholder="Cerca un rifiuto...">
+            <p class="mysearch sm-thin"></p>
+            <div class="liste">
+
+                <div id="lista-umido" class="infoList convex" onclick="showInfo('lista-umido')">
                     <h4 class="sm-thin">Umido</h4>
-                    <li class="invisible">scarti di cucina</li>
-                    <li class="invisible">alimenti scaduti o avariati</li>
-                    </ul>
-                    <ul id="lista-indifferenziata" class="infoList convex" onclick="showInfo('lista-indifferenziata')">
-                        <h4 class="sm-thin">Indifferenziata</h4>
-                        <li class="invisible">giocattoli rotti</li>
-                        <li class="invisible">pannolini o assorbenti</li>
-                    </ul>
+                    <span class="invisible">
+                        Scarti di cucina, alimenti scaduti o avariati, fondi di caffè, filtri del tè, bastoncini in
+                        legno del gelato, tovaglioli in carta non colorati, sughero, terriccio, cenere del camino, fiori
+                        secchi, escrementi di animali domestici, lettiere compostabili.
+                    </span>
                 </div>
-               
-            </form>
+
+                <div id="lista-indifferenziata" class="infoList convex" onclick="showInfo('lista-indifferenziata')">
+                    <h4 class="sm-thin">Indifferenziata</h4>
+                    <span class="invisible">
+                        Giocattoli rotti, pannolini, assorbenti, cotton fioc, spugne sintetiche, polvere, pyrex,
+                        porcellana, accendini e mozziconi di sigaretta, carta oleata, scontrini, rifiuti fatti di più
+                        materiali, lettiera non compostabile, cd e dvd, lampadine a incandescenza, nastri adesivi,
+                        tappeti e cuscini, matite e pennarelli.
+                    </span>
+                </div>
+
+                <div id="lista-vetro" class="infoList convex" onclick="showInfo('lista-vetro')">
+                    <h4 class="sm-thin">Vetro</h4>
+                    <span class="invisible">
+                        Imballaggi e bottiglie in vetro, anche se sporchi o con etichette.
+                    </span>
+                </div>
+
+                <div id="lista-plastica" class="infoList convex" onclick="showInfo('lista-plastica')">
+                    <h4 class="sm-thin">Plastica</h4>
+                    <span class="invisible">
+                        Imballaggi come bottiglie, vaschette, flaconi, vasetti, buste e bustine, piatti e bicchieri
+                        monouso, blister, reti per frutta e verdura.
+                    </span>
+                </div>
+
+                <div id="lista-carta" class="infoList convex" onclick="showInfo('lista-carta')">
+                    <h4 class="sm-thin">Carta</h4>
+                    <span class="invisible">
+                        Giornali, riviste, libri e quaderni, moduli, scatole e imballaggi in cartone, Tetra Pak senza
+                        parti in plastica, sacchetti in carta.
+                    </span>
+                </div>
+
+                <div id="lista-metallo" class="infoList convex" onclick="showInfo('lista-metallo')">
+                    <h4 class="sm-thin">Metallo</h4>
+                    <span class="invisible">
+                        Lattine, fogli in alluminio, bombolette spray non infiammabili, scatolette e barattoli per carne
+                        e legumi, tubetti, coperchi dello yogurt, tappi e capsule.
+                    </span>
+                </div>
+
+
+            </div>
         </div>
         <div class="button convex back" onclick="hidePanel(`search-panel`)">
             <i class="fa-solid fa-arrow-left"></i>
         </div>
+    </div>
     </div>
 
 
@@ -277,16 +317,16 @@
 
 
     <script type="text/javascript">
-        function showInfo(thisList){
-        document.querySelector('#' + thisList + ' li').classList.toggle('invisible');
-        document.querySelector('#' + thisList).classList.toggle('open');
+        function showInfo(thisList) {
+            document.querySelector('#' + thisList + ' span').classList.toggle('invisible');
+            document.querySelector('#' + thisList).classList.toggle('open');
         }
 
         //RICERCA RIFIUTI
         const searchInput = document.getElementById('searchInput');
-        const items = document.getElementsByTagName('li');
-        const mysearch = document.querySelector('.mysearch')
-        const searchResult = document.querySelector('.search-result')
+        const items = document.querySelectorAll('.infoList span');
+        const mysearch = document.querySelector('.mysearch');
+        const searchResult = document.querySelector('.search-result');
 
         searchInput.addEventListener('input', function () {
             const searchValue = searchInput.value.toLowerCase();
@@ -295,13 +335,10 @@
             for (let i = 0; i < items.length; i++) {
                 const item = items[i];
                 const itemName = item.textContent.toLowerCase();
-
                 if (itemName.includes(searchValue)) {
-                    console.log('found iiiiit')
+                    item.parentElement.classList.remove('invisible');
                 } else {
-                    console.log()
-                    const aiuto = document.querySelector(`ul:has(${item.value})`);
-                    console.log(aiuto)
+                    item.parentElement.classList.add('invisible');
                 }
             }
         });

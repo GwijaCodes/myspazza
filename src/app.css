@@ -50,7 +50,7 @@ body {
   transition: background-color .2s ease;
 }
 
-li{
+li {
   list-style-type: none;
 }
 
@@ -293,8 +293,6 @@ option:active {
   font-size: 12px;
 }
 
-/*good job*/
-
 /*SEARCH PANEL*/
 
 .search-panel {
@@ -312,9 +310,10 @@ option:active {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
-.search-panel .title{
+.search-panel .title {
   position: absolute;
   top: 10vh;
   left: 6%;
@@ -333,8 +332,7 @@ option:active {
 }
 
 .search-content {
-  width: 80%;
-  padding-top: 40px;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -345,34 +343,33 @@ option:active {
   width: 100%;
   height: fit-content;
   border: 0;
-  padding: 2%;
+  padding: 4%;
   outline: none;
   border-bottom: 2px solid var(--dark);
   background-color: transparent;
 }
 
-.infoList{
+.infoList {
   padding: 10px;
   border-radius: 10px;
-  width: 80px;
-  height: 50px;
+  width: 45%;
+  aspect-ratio: 5/3;
   display: grid;
   place-content: center;
-}
-
-li{
+  cursor: pointer;
   font-size: 10px;
 }
 
-.liste{
+.liste {
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 10px;
+  width: 100%;
 }
 
-.open{
+.open {
   width: 100%;
 }
 
