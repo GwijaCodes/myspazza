@@ -8,11 +8,7 @@
   aspect-ratio: 1/1;
   margin: auto;
   margin-bottom: 10px;
-  background: url('../images/trashbins.png');
-  background-size: cover;
-  transition: background-position-x 0.2s ease;
-  background-position-x: 0px;
-  background-position-y: center;
+  background: url('../images/bin-brown.png');
 }
 
 .trashbin-cover {
@@ -28,6 +24,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 :root {
@@ -42,6 +39,7 @@ body {
   min-height: 100vh;
   width: 400px;
   margin: auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,7 +48,7 @@ body {
   transition: background-color .2s ease;
 }
 
-li{
+li {
   list-style-type: none;
 }
 
@@ -192,7 +190,8 @@ li{
 
 
 .edit-panel {
-  background: var(--light);
+  background: transparent;
+  backdrop-filter: blur(16px);
   color: var(--dark);
   box-shadow: 2px 2px 6px #b3b3b3,
     -2px -2px 6px #ffffff;
@@ -209,7 +208,8 @@ li{
 }
 
 select {
-  min-height: 50vh;
+  min-height: 56vh;
+  max-width: 100%;
   border: none;
   padding: 10px;
   size: 8;
@@ -293,28 +293,29 @@ option:active {
   font-size: 12px;
 }
 
-/*good job*/
-
 /*SEARCH PANEL*/
 
 .search-panel {
-  background: var(--light);
+  background: transparent;
+  backdrop-filter: blur(16px);
   color: var(--dark);
   box-shadow: 2px 2px 6px #b3b3b3,
     -2px -2px 6px #ffffff;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  min-height: 120vh;
   padding: 10%;
   z-index: 100;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  transition: all 1s ease;
 }
 
-.search-panel .title{
+.search-panel .title {
   position: absolute;
   top: 10vh;
   left: 6%;
@@ -334,46 +335,63 @@ option:active {
 
 .search-content {
   width: 80%;
-  padding-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 10px;
+  position: absolute;
+  top: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 500px) {
+  .search-content {
+    max-height: 100vh;
+    width: auto;
+  }
 }
 
 .search-content input {
   width: 100%;
   height: fit-content;
   border: 0;
-  padding: 2%;
+  padding: 4%;
   outline: none;
   border-bottom: 2px solid var(--dark);
   background-color: transparent;
 }
 
-.infoList{
+.infoList {
   padding: 10px;
   border-radius: 10px;
-  width: 80px;
-  height: 50px;
+  width: 45%;
+  aspect-ratio: 5/3;
   display: grid;
   place-content: center;
-}
-
-li{
+  cursor: pointer;
   font-size: 10px;
+  overflow-y: hidden;
+  transition: width .4s ease;
 }
 
-.liste{
+.infoList p {
+  white-space: nowrap;
+}
+
+.liste {
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 10px;
+  width: 100%;
 }
 
-.open{
+.open {
   width: 100%;
+  aspect-ratio: auto;
+  height: fit-content;
 }
 
 .active {
@@ -390,12 +408,6 @@ li{
     background: #353535;
     box-shadow: 5px 5px 6px #1e1e1e,
       -5px -5px 6px #4c4c4c;
-  }
-
-  .edit-panel {
-    background-color: #353535;
-    box-shadow: 2px 2px 6px #212121,
-      -2px -2px 6px #5d5d5d;
   }
 
   option {

@@ -12,11 +12,6 @@ self.addEventListener('install', (e)=>{
     );
 })
 
-//offline
-const OFFLINE_VERSION = 1;
-const CACHE_NAME = "offline";
-// Customize this with a different URL if needed.
-const OFFLINE_URL = "./src/fallback.html";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
