@@ -69,7 +69,7 @@ setInterval(() => {
             trashbin.style.background = 'url(../images/bin-grey.png)';
             break;
         case ' Giorno Libero':
-            trashbin.style.background = 'url(../images/bin-grey.png)';
+            trashbin.style.background = 'url(../images/bin-party.png)';
     }
 
 }, 500)
@@ -79,13 +79,10 @@ let isDarkMode = false;
 
 function darkMode() {
     isDarkMode = !isDarkMode;
-    console.log(isDarkMode)
 
     isDarkMode ? document.querySelector('body').classList.add('active') : document.querySelector('body').classList.remove('active');
     localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode))
 }
 
-//if (localStorage.getItem('isDarkMode') === 'true')
-//localStorage.setItem('isDarkMode', true);
 
 
