@@ -22,7 +22,6 @@ const trashbin = document.querySelector('.trashbin');
 
 window.addEventListener('load', () => {
 
-
     console.log('ready')
 
     if (JSON.parse(localStorage.getItem('isDarkMode')) === true) {
@@ -42,6 +41,9 @@ window.addEventListener('load', () => {
 })
 
 setInterval(() => {
+    document.querySelector('.loading').style.opacity = '0'
+    document.querySelector('.loading').style.transform = 'translateX(150%)'
+
     today = document.querySelector('#today').innerText = raccolta[dayN];
     if (dayN >= raccolta.length - 1) {
         domani.innerHTML = raccolta[0];
