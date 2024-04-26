@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="tomorrow">
-        <div class="domani concave container">
+        <div class="domani convex container">
             <p class="sm-bold">Domani:</p>
             <p class="sm-thin" id="tomorrow">...</p>
         </div>
@@ -247,13 +247,13 @@
     <div class="search-panel invisible">
         <h2 class="title">Cerca rifiuti</h2>
         <div class="search-content">
-            <input type="search" id="searchInput" placeholder="Cerca un rifiuto...">
+            <input type="search" id="searchInput" placeholder="Cerca un rifiuto..." class="concave">
             <p class="mysearch sm-thin"></p>
             <div class="liste">
 
                 <div id="lista-umido" class="infoList convex" onclick="showInfo('lista-umido')">
                     <h4 class="sm-thin">Umido</h4>
-                    <span class="invisible">
+                    <span class="invisible-text">
                         Scarti di cucina, alimenti scaduti o avariati, fondi di caffè, filtri del tè, bastoncini in
                         legno del gelato, tovaglioli in carta non colorati, sughero, terriccio, cenere del camino, fiori
                         secchi, escrementi di animali domestici, lettiere compostabili.
@@ -262,7 +262,7 @@
 
                 <div id="lista-indifferenziata" class="infoList convex" onclick="showInfo('lista-indifferenziata')">
                     <h4 class="sm-thin">Indifferenziata</h4>
-                    <span class="invisible">
+                    <span class="invisible-text">
                         Giocattoli rotti, pannolini, assorbenti, cotton fioc, spugne sintetiche, polvere, pyrex,
                         porcellana, accendini e mozziconi di sigaretta, carta oleata, scontrini, rifiuti fatti di più
                         materiali, lettiera non compostabile, cd e dvd, lampadine a incandescenza, nastri adesivi,
@@ -272,14 +272,14 @@
 
                 <div id="lista-vetro" class="infoList convex" onclick="showInfo('lista-vetro')">
                     <h4 class="sm-thin">Vetro</h4>
-                    <span class="invisible">
+                    <span class="invisible-text">
                         Imballaggi e bottiglie in vetro, anche se sporchi o con etichette.
                     </span>
                 </div>
 
                 <div id="lista-plastica" class="infoList convex" onclick="showInfo('lista-plastica')">
                     <h4 class="sm-thin">Plastica</h4>
-                    <span class="invisible">
+                    <span class="invisible-text">
                         Imballaggi come bottiglie, vaschette, flaconi, vasetti, buste e bustine, piatti e bicchieri
                         monouso, blister, reti per frutta e verdura.
                     </span>
@@ -287,7 +287,7 @@
 
                 <div id="lista-carta" class="infoList convex" onclick="showInfo('lista-carta')">
                     <h4 class="sm-thin">Carta</h4>
-                    <span class="invisible">
+                    <span class="invisible-text">
                         Giornali, riviste, libri e quaderni, moduli, scatole e imballaggi in cartone, Tetra Pak senza
                         parti in plastica, sacchetti in carta.
                     </span>
@@ -295,7 +295,7 @@
 
                 <div id="lista-metallo" class="infoList convex" onclick="showInfo('lista-metallo')">
                     <h4 class="sm-thin">Metallo</h4>
-                    <span class="invisible">
+                    <span class="invisible-text">
                         Lattine, fogli in alluminio, bombolette spray non infiammabili, scatolette e barattoli per carne
                         e legumi, tubetti, coperchi dello yogurt, tappi e capsule.
                     </span>
@@ -322,7 +322,7 @@
 
     <script type="text/javascript">
         function showInfo(thisList) {
-            document.querySelector('#' + thisList + ' span').classList.toggle('invisible');
+            document.querySelector('#' + thisList + ' span').classList.toggle('invisible-text');
             document.querySelector('#' + thisList).classList.toggle('open');
         }
 
@@ -340,12 +340,13 @@
                 const item = items[i];
                 const itemName = item.textContent.toLowerCase();
                 if (itemName.includes(searchValue)) {
-                    item.parentElement.classList.remove('invisible');
+                    item.parentElement.classList.remove('invisible-text');
                 } else {
-                    item.parentElement.classList.add('invisible');
+                    item.parentElement.classList.add('invisible-text');
                 }
             }
         });
+
 
 
         //select without the need to hold down ctrl
@@ -365,6 +366,7 @@
 
         function displayTrash(dayName, dayTrashes, dayEditPanel) {
             document.querySelector('.' + dayEditPanel).classList.toggle('invisible');
+            document.querySelector('.' + dayEditPanel).classList.toggle('visible');
             let selectedValues = [];
             for (let option of document.querySelector("#" + dayTrashes).options) {
                 if (option.selected) {
@@ -380,14 +382,23 @@
 
         function hidePanel(thisPanel) {
             document.querySelector('.' + thisPanel).classList.add('invisible')
+            document.querySelector('.' + thisPanel).classList.remove('visible')
         }
 
         function displaySearchPanel() {
             document.querySelector('.search-panel').classList.toggle('invisible');
+            document.querySelector('.search-panel').classList.toggle('visible');
         }
 
+        //use checkboxes instead
+        // var array = []
+        // var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
 
-        //swap hidedisplaytrash with showdisplaytrash or something like that
+        // for (var i = 0; i < checkboxes.length; i++) {
+        //     array.push(checkboxes[i].value)
+        // }
+
+
 
     </script>
 
