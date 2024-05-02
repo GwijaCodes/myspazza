@@ -54,23 +54,23 @@ setInterval(() => {
     //visualizza bidone
 
     switch (today) {
-        case ' Plastica':
+        case 'Plastica':
             trashbin.style.background = 'url(../images/bin-yellow.png)';
             break;
-        case ' Umido':
+        case 'Umido':
             trashbin.style.background = 'url(../images/bin-brown.png)';
             break;
-        case ' Carta':
+        case 'Carta':
             trashbin.style.background = 'url(../images/bin-bluee.png)';
             break;
-        case ' Vetro':
-        case ' Metallo':
+        case 'Vetro':
+        case 'Metallo':
             trashbin.style.background = 'url(../images/bin-green.png)';
             break;
-        case ' Indifferenziata':
+        case 'Indifferenziata':
             trashbin.style.background = 'url(../images/bin-grey.png)';
             break;
-        case ' Giorno Libero':
+        case 'Giorno Libero':
             trashbin.style.background = 'url(../images/bin-party.png)';
     }
 
