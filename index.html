@@ -20,6 +20,21 @@
 </head>
 
 <body>
+    <div class="bar">
+        <div class="toggle-dark" onclick="darkMode()">
+            <div class="dark-switch concave">
+                <div class="dark-switch-toggle convex"></div>
+            </div>
+            <div class="switch-icons">
+                <i class="fa-regular fa-sun"></i>
+                <i class="fa-regular fa-moon"></i>
+            </div>
+        </div>
+
+        <div class="search-btn" onclick="displaySearchPanel()">
+            <i class="fa-solid fa-magnifying-glass search-btn"></i>
+        </div>
+    </div>
     <div class="display">
         <div class="trashbin"></div>
         <div class="info">
@@ -37,7 +52,7 @@
         <label class="list-item" for="trashes">
             <p class="item-info sm-bold">Domenica: <span class="sm-thin" id="dom">Umido</span></p>
 
-            <div class="domEditPanel edit-panel ">
+            <div class="domEditPanel edit-panel invisible">
                 <h2 class="title">Modifica</h2>
                 <p class="sm-thin">Domenica:</p>
 
@@ -386,22 +401,13 @@
         </label>
     </div>
     </div>
-    <div class="toggle-dark" onclick="darkMode()">
-        <div class="dark-switch concave">
-            <div class="dark-switch-toggle convex"></div>
-        </div>
-        <div class="switch-icons">
-            <i class="fa-regular fa-sun"></i>
-            <i class="fa-regular fa-moon"></i>
-        </div>
-    </div>
 
-    <div class="search-btn" onclick="displaySearchPanel()">
-        <i class="fa-solid fa-magnifying-glass search-btn"></i>
-    </div>
+
+
     <div class="search-panel invisible">
-        <h2 class="title">Cerca rifiuti</h2>
         <div class="search-content">
+            <h2 class="title">Cerca rifiuti</h2>
+
             <input type="search" id="searchInput" placeholder="Cerca un rifiuto..." class="concave">
             <p class="mysearch sm-thin"></p>
             <div class="liste">
