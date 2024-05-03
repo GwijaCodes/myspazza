@@ -53,6 +53,13 @@
             <p class="item-info sm-bold">Domenica: <span class="sm-thin" id="dom">Umido</span></p>
 
             <div class="domEditPanel edit-panel invisible">
+                
+                <div class="bar">
+                    <div class="button convex back" onclick="hidePanel(`domEditPanel`)">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                </div>
+
                 <h2 class="title">Modifica</h2>
                 <p class="sm-thin">Domenica:</p>
 
@@ -89,9 +96,7 @@
 
                 <div class="submit button convex done" onclick="displayTrash(`dom`, `domTrashes`, `domEditPanel`)">Fatto
                 </div>
-                <div class="button convex back" onclick="hidePanel(`domEditPanel`)">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </div>
+
 
             </div>
 
@@ -101,8 +106,15 @@
         </label>
 
         <label class="list-item" for="trashes">
+            
             <p class="item-info sm-bold">Lunedi: <span class="sm-thin" id="lun">Indifferenziata</span></p>
             <div class="lunEditPanel edit-panel invisible">
+
+                <div class="bar">
+                    <div class="button convex back" onclick="hidePanel(`lunEditPanel`)">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                </div>
                 <h2 class="title">Modifica</h2>
                 <p class="sm-thin">Lunedi:</p>
 
@@ -139,9 +151,8 @@
 
                 <div class="submit button convex done" onclick="displayTrash(`lun`, `lunTrashes`, `lunEditPanel`)">Fatto
                 </div>
-                <div class="button convex back" onclick="hidePanel(`lunEditPanel`)">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </div>
+
+                
 
             </div>
 
@@ -203,6 +214,12 @@
         <label class="list-item" for="trashes">
             <p class="item-info sm-bold">Mercoledi: <span class="sm-thin" id="mer">Indifferenziata</span></p>
             <div class="merEditPanel edit-panel invisible">
+                <div class="bar">
+                    <div class="button convex back" onclick="hidePanel(`merEditPanel`)">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                </div>
+
                 <h2 class="title">Modifica</h2>
                 <p class="sm-thin">Mercoledi:</p>
 
@@ -239,9 +256,6 @@
 
                 <div class="submit button convex done" onclick="displayTrash(`mer`, `merTrashes`, `merEditPanel`)">Fatto
                 </div>
-                <div class="button convex back" onclick="hidePanel(`merEditPanel`)">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </div>
 
             </div>
 
@@ -253,6 +267,12 @@
         <label class="list-item" for="trashes">
             <p class="item-info sm-bold">Giovedi: <span class="sm-thin" id="gio">Carta</span></p>
             <div class="gioEditPanel edit-panel invisible">
+
+                <div class="bar">
+                    <div class="button convex back" onclick="hidePanel(`gioEditPanel`)">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                </div>
                 <h2 class="title">Modifica</h2>
                 <p class="sm-thin">Giovedi:</p>
 
@@ -289,9 +309,8 @@
 
                 <div class="submit button convex done" onclick="displayTrash(`gio`, `gioTrashes`, `gioEditPanel`)">Fatto
                 </div>
-                <div class="button convex back" onclick="hidePanel(`gioEditPanel`)">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </div>
+
+                
 
             </div>
 
@@ -303,6 +322,12 @@
         <label class="list-item" for="trashes">
             <p class="item-info sm-bold">Venerdi: <span class="sm-thin" id="ven">Umido, Metallo</span></p>
             <div class="venEditPanel edit-panel invisible">
+
+                <div class="bar">
+                    <div class="button convex back" onclick="hidePanel(`venEditPanel`)">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                </div>
                 <h2 class="title">Modifica</h2>
                 <p class="sm-thin">Venerdi:</p>
 
@@ -339,9 +364,8 @@
 
                 <div class="submit button convex done" onclick="displayTrash(`ven`, `venTrashes`, `venEditPanel`)">Fatto
                 </div>
-                <div class="button convex back" onclick="hidePanel(`venEditPanel`)">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </div>
+
+     
 
             </div>
 
@@ -353,6 +377,12 @@
         <label class="list-item" for="trashes">
             <p class="item-info sm-bold">Sabato: <span class="sm-thin" id="sab">Giorno Libero</span></p>
             <div class="sabEditPanel edit-panel invisible">
+
+                <div class="bar">
+                    <div class="button convex back" onclick="hidePanel(`sabEditPanel`)">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                </div>
                 <h2 class="title">Modifica</h2>
                 <p class="sm-thin">Sabato:</p>
 
@@ -389,9 +419,8 @@
 
                 <div class="submit button convex done" onclick="displayTrash(`sab`, `sabTrashes`, `sabEditPanel`)">Fatto
                 </div>
-                <div class="button convex back" onclick="hidePanel(`sabEditPanel`)">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </div>
+
+                
 
             </div>
 
@@ -406,6 +435,11 @@
 
     <div class="search-panel invisible">
         <div class="search-content">
+            <div class="bar">
+                <div class="button convex back" onclick="hidePanel(`search-panel`)">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+            </div>
             <h2 class="title">Cerca rifiuti</h2>
 
             <input type="search" id="searchInput" placeholder="Cerca un rifiuto..." class="concave">
@@ -465,9 +499,7 @@
 
             </div>
         </div>
-        <div class="button convex back" onclick="hidePanel(`search-panel`)">
-            <i class="fa-solid fa-arrow-left"></i>
-        </div>
+
     </div>
     </div>
 

@@ -35,6 +35,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  position: relative;
   background-color: var(--light);
   color: var(--dark);
   min-height: 100vh;
@@ -53,12 +54,7 @@ li {
   list-style-type: none;
 }
 
-@media (max-width: 500px) {
-  body {
-    max-width: 80vw;
-    overflow-x: hidden !important;
-  }
-}
+
 
 .visible {
   animation: sho .5s forwards !important;
@@ -74,24 +70,24 @@ li {
 
 @keyframes inv {
   from {
-    transform: translateX(0);
+    transform: translateY(0);
     display: inherit;
   }
 
   to {
-    transform: translateX(150%);
+    transform: translateY(150%);
     display: none;
   }
 }
 
 @keyframes sho {
   from {
-    transform: translateX(150%);
+    transform: translateY(-150%);
     display: none;
   }
 
   to {
-    transform: translateX(0);
+    transform: translateY(0);
     display: inherit;
   }
 }
@@ -228,30 +224,29 @@ li {
   left: 70vw;
 }
 
-
 .edit-panel {
-  background: transparent;
-  backdrop-filter: blur(16px);
+  background: var(--light);
   color: var(--dark);
   box-shadow: 2px 2px 6px #b3b3b3,
     -2px -2px 6px #ffffff;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  padding: 20%;
   z-index: 100;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 0 25vw;
 }
 
 .trashes {
-  width: 100%;
+  width: 50%;
   border: none;
   padding: 20px 0;
   background-color: transparent;
+  
 }
 
 .done {
@@ -262,8 +257,6 @@ li {
 }
 
 .back {
-  position: fixed;
-  top: 2%;
   left: 6%;
 }
 
@@ -353,17 +346,15 @@ input:checked~.customBoxes {
 /*SEARCH PANEL*/
 
 .search-panel {
-  background: transparent;
-  backdrop-filter: blur(16px);
+  background: var(--light);
   color: var(--dark);
   box-shadow: 2px 2px 6px #b3b3b3,
     -2px -2px 6px #ffffff;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 120vh;
-  padding: 20%;
+  min-height: 100vh;
   z-index: 100;
   display: flex;
   flex-direction: column;
@@ -371,7 +362,6 @@ input:checked~.customBoxes {
   align-items: center;
   transition: all 1s ease;
 }
-
 
 .search-btn {
   left: calc(100% - 40px);
@@ -390,7 +380,7 @@ input:checked~.customBoxes {
   justify-content: center;
   gap: 10px;
   position: absolute;
-  top: 20vh;
+  top: 2vh;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -400,6 +390,19 @@ input:checked~.customBoxes {
     max-height: 100vh;
     width: 40%;
   }
+  
+}
+
+@media (max-width: 500px) {
+  body {
+    max-width: 80vw;
+    overflow-x: hidden !important;
+  }
+  
+  .edit-panel{
+    padding: 0 10vw;
+  }
+
 }
 
 .search-content input {
