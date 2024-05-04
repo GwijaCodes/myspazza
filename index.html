@@ -48,12 +48,12 @@
             <p class="sm-thin" id="tomorrow">...</p>
         </div>
     </div>
-    <div class="list">
+    <div class="list convex">
         <label class="list-item" for="trashes">
             <p class="item-info sm-bold">Domenica: <span class="sm-thin" id="dom">Umido</span></p>
 
             <div class="domEditPanel edit-panel invisible">
-                
+
                 <div class="bar">
                     <div class="button convex back" onclick="hidePanel(`domEditPanel`)">
                         <i class="fa-solid fa-arrow-left"></i>
@@ -69,7 +69,7 @@
                         <span class="sm-bold">Vetro</span>
                     </label> <br>
                     <label>
-                        <input type="checkbox" value="Umido">
+                        <input type="checkbox" value="Umido" checked>
                         <span class="sm-bold">Umido</span>
                     </label> <br>
                     <label>
@@ -106,7 +106,7 @@
         </label>
 
         <label class="list-item" for="trashes">
-            
+
             <p class="item-info sm-bold">Lunedi: <span class="sm-thin" id="lun">Indifferenziata</span></p>
             <div class="lunEditPanel edit-panel invisible">
 
@@ -136,7 +136,7 @@
                         <span class="sm-bold">Metallo</span>
                     </label> <br>
                     <label>
-                        <input type="checkbox" value="Indifferenziata">
+                        <input type="checkbox" value="Indifferenziata" checked>
                         <span class="sm-bold">Indifferenziata</span>
                     </label> <br>
                     <label>
@@ -152,7 +152,7 @@
                 <div class="submit button convex done" onclick="displayTrash(`lun`, `lunTrashes`, `lunEditPanel`)">Fatto
                 </div>
 
-                
+
 
             </div>
 
@@ -164,16 +164,23 @@
         <label class="list-item" for="trashes">
             <p class="item-info sm-bold">Martedi: <span class="sm-thin" id="mar">Umido, Vetro</span></p>
             <div class="marEditPanel edit-panel invisible">
+
+                <div class="bar">
+                    <div class="button convex back" onclick="hidePanel(`marEditPanel`)">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                </div>
+
                 <h2 class="title">Modifica</h2>
                 <p class="sm-thin">Martedi:</p>
 
                 <div name="trashes" id="marTrashes" class="trashes">
                     <label>
-                        <input type="checkbox" value="Vetro">
+                        <input type="checkbox" value="Vetro" checked>
                         <span class="sm-bold">Vetro</span>
                     </label> <br>
                     <label>
-                        <input type="checkbox" value="Umido">
+                        <input type="checkbox" value="Umido" checked>
                         <span class="sm-bold">Umido</span>
                     </label> <br>
                     <label>
@@ -200,9 +207,7 @@
 
                 <div class="submit button convex done" onclick="displayTrash(`mar`, `marTrashes`, `marEditPanel`)">Fatto
                 </div>
-                <div class="button convex back" onclick="hidePanel(`marEditPanel`)">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </div>
+
 
             </div>
 
@@ -212,7 +217,7 @@
         </label>
 
         <label class="list-item" for="trashes">
-            <p class="item-info sm-bold">Mercoledi: <span class="sm-thin" id="mer">Indifferenziata</span></p>
+            <p class="item-info sm-bold">Mercoledi: <span class="sm-thin" id="mer">Plastica</span></p>
             <div class="merEditPanel edit-panel invisible">
                 <div class="bar">
                     <div class="button convex back" onclick="hidePanel(`merEditPanel`)">
@@ -233,7 +238,7 @@
                         <span class="sm-bold">Umido</span>
                     </label> <br>
                     <label>
-                        <input type="checkbox" value="Plastica">
+                        <input type="checkbox" value="Plastica" checked>
                         <span class="sm-bold">Plastica</span>
                     </label> <br>
                     <label>
@@ -298,7 +303,7 @@
                         <span class="sm-bold">Indifferenziata</span>
                     </label> <br>
                     <label>
-                        <input type="checkbox" value="Carta">
+                        <input type="checkbox" value="Carta" checked>
                         <span class="sm-bold">Carta</span>
                     </label> <br>
                     <label>
@@ -310,7 +315,7 @@
                 <div class="submit button convex done" onclick="displayTrash(`gio`, `gioTrashes`, `gioEditPanel`)">Fatto
                 </div>
 
-                
+
 
             </div>
 
@@ -337,7 +342,7 @@
                         <span class="sm-bold">Vetro</span>
                     </label> <br>
                     <label>
-                        <input type="checkbox" value="Umido">
+                        <input type="checkbox" value="Umido" checked>
                         <span class="sm-bold">Umido</span>
                     </label> <br>
                     <label>
@@ -345,7 +350,7 @@
                         <span class="sm-bold">Plastica</span>
                     </label> <br>
                     <label>
-                        <input type="checkbox" value="Metallo">
+                        <input type="checkbox" value="Metallo" checked>
                         <span class="sm-bold">Metallo</span>
                     </label> <br>
                     <label>
@@ -365,7 +370,7 @@
                 <div class="submit button convex done" onclick="displayTrash(`ven`, `venTrashes`, `venEditPanel`)">Fatto
                 </div>
 
-     
+
 
             </div>
 
@@ -412,7 +417,7 @@
                         <span class="sm-bold">Carta</span>
                     </label> <br>
                     <label>
-                        <input type="checkbox" value="Giorno Libero">
+                        <input type="checkbox" value="Giorno Libero" checked>
                         <span class="sm-bold">Giorno Libero</span>
                     </label> <br>
                 </div>
@@ -420,7 +425,7 @@
                 <div class="submit button convex done" onclick="displayTrash(`sab`, `sabTrashes`, `sabEditPanel`)">Fatto
                 </div>
 
-                
+
 
             </div>
 
@@ -434,12 +439,12 @@
 
 
     <div class="search-panel invisible">
-        <div class="search-content">
-            <div class="bar">
-                <div class="button convex back" onclick="hidePanel(`search-panel`)">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </div>
+        <div class="bar">
+            <div class="button convex back" onclick="hidePanel(`search-panel`)">
+                <i class="fa-solid fa-arrow-left"></i>
             </div>
+        </div>
+        <div class="search-content">
             <h2 class="title">Cerca rifiuti</h2>
 
             <input type="search" id="searchInput" placeholder="Cerca un rifiuto..." class="concave">
@@ -449,9 +454,10 @@
                 <div id="lista-umido" class="infoList convex" onclick="showInfo('lista-umido')">
                     <h4 class="sm-thin">Umido</h4>
                     <span class="invisible-text">
-                        Scarti di cucina, alimenti scaduti o avariati, fondi di caffè, filtri del tè, bastoncini in
-                        legno del gelato, tovaglioli in carta non colorati, sughero, terriccio, cenere del camino, fiori
-                        secchi, escrementi di animali domestici, lettiere compostabili.
+                        Sscarti e avanzi di cucina (sia cotti che crudi, purché freddi); bucce e resti di frutta; scarti
+                        di verdura; gusci di frutta secca; avanzi di carne e ossi; avanzi di pesce e lische; resti di
+                        cibo secco degli animali domestici; gusci di uova; filtri di tè, camomilla, tisane e fondi di
+                        caffè; piccole quantità di fiori recisi; tovaglioli bianchi (non colorati) sporchi di alimenti.
                     </span>
                 </div>
 
@@ -568,7 +574,6 @@
             document.querySelectorAll("#" + dayTrashes + " input[type='checkbox']").forEach((item) => {
                 if (item.checked === true) {
                     selectedValues.push(item.value)
-                    console.log(selectedValues)
                 }
             })
 

@@ -6,7 +6,6 @@
   width: 100px;
   height: 100px !important;
   aspect-ratio: 1/1;
-  margin: auto;
   margin-bottom: 10px;
   background: url('../images/bin-brown.png');
 }
@@ -45,8 +44,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  padding-top: 2vh;
+  gap: 20px;
+  padding-top: 8vh;
   transition: background-color .2s ease;
 }
 
@@ -57,11 +56,11 @@ li {
 
 
 .visible {
-  animation: sho .5s forwards !important;
+  animation: sho .5s ease-in-out forwards !important;
 }
 
 .invisible {
-  animation: inv .5s forwards !important;
+  animation: inv .5s ease-in-out forwards !important;
 }
 
 .invisible-text {
@@ -70,36 +69,37 @@ li {
 
 @keyframes inv {
   from {
-    transform: translateY(0);
-    display: inherit;
+    transform: translateY(0) scale(1);
+    opacity: 1;
   }
 
   to {
-    transform: translateY(150%);
-    display: none;
+    transform: translateY(150%) scale(.02);
+    opacity: 0;
+
   }
 }
 
 @keyframes sho {
   from {
-    transform: translateY(-150%);
-    display: none;
+    transform: translateY(-150%) scale(.02);
+    opacity: 0;
   }
 
   to {
-    transform: translateY(0);
-    display: inherit;
+    transform: translateY(0) scale(1);
+    opacity: 1;
   }
 }
 
 .concave {
-  background: #e0e0e083;
+  background: #e0e0e0;
   box-shadow: inset 2px 2px 6px #a4a4a4a8,
     inset -2px -2px 6px #ffffffaf;
 }
 
 .convex {
-  background: linear-gradient(145deg, #f0f0f07f, #cacaca71);
+  background: linear-gradient(145deg, #f0eeee, #dadada);
   box-shadow: 2px 2px 6px #b3b3b3,
     -2px -2px 6px #ffffff;
 }
@@ -126,7 +126,7 @@ li {
 }
 
 .title {
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 600;
   display: inline;
 
@@ -143,7 +143,6 @@ li {
 }
 
 .info {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -159,13 +158,22 @@ li {
 
 .display {
   width: 100%;
+  background-size: cover;
+  border-radius: 20px;
+  padding: 10px 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /*LIST ITEM*/
 
 .list {
-  padding: 20px 0;
+  padding: 20px;
   width: 100%;
+  border-radius: 20px;
 }
 
 .item-info {
@@ -178,7 +186,7 @@ li {
   justify-content: space-between;
   align-items: center;
   width: 85% 0;
-  margin: 20px auto;
+  margin-bottom: 20px;
   position: relative;
 }
 
@@ -237,8 +245,7 @@ li {
   z-index: 100;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 0 25vw;
+  padding: 6vh 25vw;
 }
 
 .trashes {
@@ -246,7 +253,7 @@ li {
   border: none;
   padding: 20px 0;
   background-color: transparent;
-  
+
 }
 
 .done {
@@ -290,19 +297,46 @@ input[type=checkbox] {
   height: 25px;
   border-radius: 50%;
   background: var(--light);
+  transition: all .2s;
 }
 
 input:checked~.customBoxes {
-  background: var(--dark);
+  animation: checked .5s linear forwards;
+}
+
+@keyframes checked {
+  0% {
+    background: var(--light);
+    transform: scale(1);
+  }
+
+  40%,
+  60% {
+    box-shadow: inset 0 0 20px 10px var(--tertiary);
+    background: var(--dark);
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+    background: var(--dark);
+    box-shadow: inset var(--dark);
+  }
 }
 
 /*UP BAR*/
 
 .bar {
-  height: 40px;
-  width: 100%;
+  height: 60px;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px 20px;
+  z-index: 100;
 }
 
 /*DARK MODE TOGGLE*/
@@ -380,7 +414,7 @@ input:checked~.customBoxes {
   justify-content: center;
   gap: 10px;
   position: absolute;
-  top: 2vh;
+  top: 8vh;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -390,7 +424,13 @@ input:checked~.customBoxes {
     max-height: 100vh;
     width: 40%;
   }
-  
+
+  .bar {
+    max-width: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
 }
 
 @media (max-width: 500px) {
@@ -398,9 +438,9 @@ input:checked~.customBoxes {
     max-width: 80vw;
     overflow-x: hidden !important;
   }
-  
-  .edit-panel{
-    padding: 0 10vw;
+
+  .edit-panel {
+    padding: 8vh 10vw;
   }
 
 }
@@ -453,7 +493,7 @@ input:checked~.customBoxes {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 10px;
+  gap: 20px;
   width: 100%;
 }
 
@@ -499,6 +539,7 @@ input:checked~.customBoxes {
 
   .done {
     background-color: #e5dfdf;
+    color: #1e1e1e;
   }
 
   .dark-switch-toggle {
