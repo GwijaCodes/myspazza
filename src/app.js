@@ -65,9 +65,9 @@ function checkBins() {
     trashbin.textContent = '';
 
     for (let count of trashCount) {
+        // console.log(count.toLowerCase())
         trashbin.appendChild(bin.cloneNode(true))
-        bin.src = `../images/${count}.png`;
-
+        bin.src = `../images/${count.toLowerCase()}.png`;
     }
 
     const bins = document.querySelectorAll('.tmp')
