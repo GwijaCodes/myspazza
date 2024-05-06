@@ -562,5 +562,10 @@ input:checked~.customBoxes {
   height: 100%;
   aspect-ratio: 1/1 !important;
   border-radius: 50%;
-  margin: 0 -20px;
+  margin: 0 -10px;
+  z-index: 10;
+}
+
+.tmp:nth-child(2n) {
+  z-index: 9;
 }
