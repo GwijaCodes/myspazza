@@ -57,30 +57,7 @@ document.querySelector('body').addEventListener('click', () => {
 
 })
 
-function checkBins() {
-    const trashCount = raccolta[dayN].split(',');
-    trashCount.push('Libero')
-    const bin = document.createElement('img');
-    bin.classList.add('tmp');
-    trashbin.textContent = '';
 
-    for (let count of trashCount) {
-        // console.log(count.toLowerCase())
-        trashbin.appendChild(bin.cloneNode(true))
-        bin.src = '../images/' + count.toLowerCase() + '.png';
-    }
-
-    const bins = document.querySelectorAll('.tmp')
-    trashbin.removeChild(bins[0])
-
-
-    today = document.querySelector('#today').innerText = raccolta[dayN];
-    if (dayN >= raccolta.length - 1) {
-        domani.innerHTML = raccolta[0];
-    } else {
-        domani.innerHTML = raccolta[dayN + 1];
-    }
-}
 
 
 //dark mode
