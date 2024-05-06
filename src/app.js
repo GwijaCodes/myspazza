@@ -13,6 +13,8 @@ let oggi = document.querySelector('#oggi').innerHTML = `${weekday} ${day} ${mont
 let domani = document.querySelector('#tomorrow');
 
 
+
+
 //mostra cosa buttare oggi e domani
 
 let myDays = document.querySelectorAll('label p span');
@@ -36,13 +38,41 @@ window.addEventListener('load', () => {
             myDays[i].textContent = raccolta[i];
         }
     }
+    checkBins()
+
 
 
 })
 
-setInterval(() => {
-    document.querySelector('.loading').style.opacity = '0'
-    document.querySelector('.loading').style.transform = 'translateX(150%)'
+
+//loading TO FIX
+document.querySelector('.loading').style.opacity = '0'
+document.querySelector('.loading').style.transform = 'translateX(150%)'
+
+
+
+document.querySelector('body').addEventListener('click', () => {
+
+    checkBins()
+
+})
+
+function checkBins() {
+    const trashCount = raccolta[dayN].split(',');
+    trashCount.push('Libero')
+    const bin = document.createElement('img');
+    bin.classList.add('tmp');
+    trashbin.textContent = '';
+
+    for (let count of trashCount) {
+        trashbin.appendChild(bin.cloneNode(true))
+        bin.src = `../images/${count}.png`;
+
+    }
+
+    const bins = document.querySelectorAll('.tmp')
+    trashbin.removeChild(bins[0])
+
 
     today = document.querySelector('#today').innerText = raccolta[dayN];
     if (dayN >= raccolta.length - 1) {
@@ -50,31 +80,8 @@ setInterval(() => {
     } else {
         domani.innerHTML = raccolta[dayN + 1];
     }
+}
 
-    //visualizza bidone
-
-    switch (today) {
-        case 'Plastica':
-            trashbin.style.background = 'url(../images/bin-yellow.png)';
-            break;
-        case 'Umido':
-            trashbin.style.background = 'url(../images/bin-brown.png)';
-            break;
-        case 'Carta':
-            trashbin.style.background = 'url(../images/bin-bluee.png)';
-            break;
-        case 'Vetro':
-        case 'Metallo':
-            trashbin.style.background = 'url(../images/bin-green.png)';
-            break;
-        case 'Indifferenziata':
-            trashbin.style.background = 'url(../images/bin-grey.png)';
-            break;
-        case 'Giorno Libero':
-            trashbin.style.background = 'url(../images/bin-party.png)';
-    }
-
-}, 500)
 
 //dark mode
 let isDarkMode = false;
