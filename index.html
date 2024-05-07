@@ -23,15 +23,14 @@
     <div class="bar">
         <div class="toggle-dark" onclick="darkMode()">
             <div class="dark-switch concave">
-                <div class="dark-switch-toggle convex"></div>
-            </div>
-            <div class="switch-icons">
-                <i class="fa-regular fa-sun"></i>
-                <i class="fa-regular fa-moon"></i>
+                <div class="dark-switch-toggle convex">
+                    <i class="fa-regular fa-sun"></i>
+                    <i class="fa-regular fa-moon"></i>
+                </div>
             </div>
         </div>
 
-        <div class="search-btn" onclick="displaySearchPanel()">
+        <div class="search-btn convex button" onclick="displaySearchPanel()">
             <i class="fa-solid fa-magnifying-glass search-btn"></i>
         </div>
     </div>
@@ -43,12 +42,12 @@
         </div>
     </div>
     <div class="tomorrow">
-        <div class="domani convex container">
+        <div class="domani flat container">
             <p class="sm-bold">Domani:</p>
             <p class="sm-thin" id="tomorrow">...</p>
         </div>
     </div>
-    <div class="list convex">
+    <div class="list flat">
         <label class="list-item" for="trashes">
             <p class="item-info sm-bold">Domenica: <span class="sm-thin" id="dom">Umido</span></p>
 
@@ -59,45 +58,46 @@
                         <i class="fa-solid fa-arrow-left"></i>
                     </div>
                 </div>
+                <div class="edit-panel-content">
+                    <h2 class="title">Modifica</h2>
+                    <p class="sm-thin">Domenica:</p>
 
-                <h2 class="title">Modifica</h2>
-                <p class="sm-thin">Domenica:</p>
+                    <div name="trashes" id="domTrashes" class="trashes">
+                        <label>
+                            <input type="checkbox" value="Vetro">
+                            <span class="sm-bold">Vetro</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Umido" checked>
+                            <span class="sm-bold">Umido</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Plastica">
+                            <span class="sm-bold">Plastica</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Metallo">
+                            <span class="sm-bold">Metallo</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Indifferenziata">
+                            <span class="sm-bold">Indifferenziata</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Carta">
+                            <span class="sm-bold">Carta</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Libero">
+                            <span class="sm-bold">Libero</span>
+                        </label> <br>
+                    </div>
 
-                <div name="trashes" id="domTrashes" class="trashes">
-                    <label>
-                        <input type="checkbox" value="Vetro">
-                        <span class="sm-bold">Vetro</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Umido" checked>
-                        <span class="sm-bold">Umido</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Plastica">
-                        <span class="sm-bold">Plastica</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Metallo">
-                        <span class="sm-bold">Metallo</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Indifferenziata">
-                        <span class="sm-bold">Indifferenziata</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Carta">
-                        <span class="sm-bold">Carta</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Libero">
-                        <span class="sm-bold">Libero</span>
-                    </label> <br>
+                    <div class="submit button convex done" onclick="displayTrash(`dom`, `domTrashes`, `domEditPanel`)">
+                        Fatto
+                    </div>
+
                 </div>
-
-                <div class="submit button convex done" onclick="displayTrash(`dom`, `domTrashes`, `domEditPanel`)">Fatto
-                </div>
-
-
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`dom`, `domTrashes`, `domEditPanel`)">
@@ -115,45 +115,48 @@
                         <i class="fa-solid fa-arrow-left"></i>
                     </div>
                 </div>
-                <h2 class="title">Modifica</h2>
-                <p class="sm-thin">Lunedi:</p>
 
-                <div name="trashes" id="lunTrashes" class="trashes">
-                    <label>
-                        <input type="checkbox" value="Vetro">
-                        <span class="sm-bold">Vetro</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Umido">
-                        <span class="sm-bold">Umido</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Plastica">
-                        <span class="sm-bold">Plastica</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Metallo">
-                        <span class="sm-bold">Metallo</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Indifferenziata" checked>
-                        <span class="sm-bold">Indifferenziata</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Carta">
-                        <span class="sm-bold">Carta</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Libero">
-                        <span class="sm-bold">Libero</span>
-                    </label> <br>
+                <div class="edit-panel-content">
+                    <h2 class="title">Modifica</h2>
+                    <p class="sm-thin">Lunedi:</p>
+
+                    <div name="trashes" id="lunTrashes" class="trashes">
+                        <label>
+                            <input type="checkbox" value="Vetro">
+                            <span class="sm-bold">Vetro</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Umido">
+                            <span class="sm-bold">Umido</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Plastica">
+                            <span class="sm-bold">Plastica</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Metallo">
+                            <span class="sm-bold">Metallo</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Indifferenziata" checked>
+                            <span class="sm-bold">Indifferenziata</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Carta">
+                            <span class="sm-bold">Carta</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Libero">
+                            <span class="sm-bold">Libero</span>
+                        </label> <br>
+                    </div>
+
+                    <div class="submit button convex done" onclick="displayTrash(`lun`, `lunTrashes`, `lunEditPanel`)">
+                        Fatto
+                    </div>
+
+
                 </div>
-
-                <div class="submit button convex done" onclick="displayTrash(`lun`, `lunTrashes`, `lunEditPanel`)">Fatto
-                </div>
-
-
-
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`lun`, `lunTrashes`, `lunEditPanel`)">
@@ -171,44 +174,46 @@
                     </div>
                 </div>
 
-                <h2 class="title">Modifica</h2>
-                <p class="sm-thin">Martedi:</p>
+                <div class="edit-panel-content">
+                    <h2 class="title">Modifica</h2>
+                    <p class="sm-thin">Martedi:</p>
 
-                <div name="trashes" id="marTrashes" class="trashes">
-                    <label>
-                        <input type="checkbox" value="Vetro" checked>
-                        <span class="sm-bold">Vetro</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Umido" checked>
-                        <span class="sm-bold">Umido</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Plastica">
-                        <span class="sm-bold">Plastica</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Metallo">
-                        <span class="sm-bold">Metallo</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Indifferenziata">
-                        <span class="sm-bold">Indifferenziata</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Carta">
-                        <span class="sm-bold">Carta</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Libero">
-                        <span class="sm-bold">Libero</span>
-                    </label> <br>
+                    <div name="trashes" id="marTrashes" class="trashes">
+                        <label>
+                            <input type="checkbox" value="Vetro" checked>
+                            <span class="sm-bold">Vetro</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Umido" checked>
+                            <span class="sm-bold">Umido</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Plastica">
+                            <span class="sm-bold">Plastica</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Metallo">
+                            <span class="sm-bold">Metallo</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Indifferenziata">
+                            <span class="sm-bold">Indifferenziata</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Carta">
+                            <span class="sm-bold">Carta</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Libero">
+                            <span class="sm-bold">Libero</span>
+                        </label> <br>
+                    </div>
+
+                    <div class="submit button convex done" onclick="displayTrash(`mar`, `marTrashes`, `marEditPanel`)">
+                        Fatto
+                    </div>
+
                 </div>
-
-                <div class="submit button convex done" onclick="displayTrash(`mar`, `marTrashes`, `marEditPanel`)">Fatto
-                </div>
-
-
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`mar`, `marTrashes`, `marEditPanel`)">
@@ -225,43 +230,46 @@
                     </div>
                 </div>
 
-                <h2 class="title">Modifica</h2>
-                <p class="sm-thin">Mercoledi:</p>
+                <div class="edit-panel-content">
+                    <h2 class="title">Modifica</h2>
+                    <p class="sm-thin">Mercoledi:</p>
 
-                <div name="trashes" id="merTrashes" class="trashes">
-                    <label>
-                        <input type="checkbox" value="Vetro">
-                        <span class="sm-bold">Vetro</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Umido">
-                        <span class="sm-bold">Umido</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Plastica" checked>
-                        <span class="sm-bold">Plastica</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Metallo">
-                        <span class="sm-bold">Metallo</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Indifferenziata">
-                        <span class="sm-bold">Indifferenziata</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Carta">
-                        <span class="sm-bold">Carta</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Libero">
-                        <span class="sm-bold">Libero</span>
-                    </label> <br>
+                    <div name="trashes" id="merTrashes" class="trashes">
+                        <label>
+                            <input type="checkbox" value="Vetro">
+                            <span class="sm-bold">Vetro</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Umido">
+                            <span class="sm-bold">Umido</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Plastica" checked>
+                            <span class="sm-bold">Plastica</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Metallo">
+                            <span class="sm-bold">Metallo</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Indifferenziata">
+                            <span class="sm-bold">Indifferenziata</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Carta">
+                            <span class="sm-bold">Carta</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Libero">
+                            <span class="sm-bold">Libero</span>
+                        </label> <br>
+                    </div>
+
+                    <div class="submit button convex done" onclick="displayTrash(`mer`, `merTrashes`, `merEditPanel`)">
+                        Fatto
+                    </div>
+
                 </div>
-
-                <div class="submit button convex done" onclick="displayTrash(`mer`, `merTrashes`, `merEditPanel`)">Fatto
-                </div>
-
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`mer`, `merTrashes`, `merEditPanel`)">
@@ -278,45 +286,48 @@
                         <i class="fa-solid fa-arrow-left"></i>
                     </div>
                 </div>
-                <h2 class="title">Modifica</h2>
-                <p class="sm-thin">Giovedi:</p>
 
-                <div name="trashes" id="gioTrashes" class="trashes">
-                    <label>
-                        <input type="checkbox" value="Vetro">
-                        <span class="sm-bold">Vetro</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Umido">
-                        <span class="sm-bold">Umido</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Plastica">
-                        <span class="sm-bold">Plastica</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Metallo">
-                        <span class="sm-bold">Metallo</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Indifferenziata">
-                        <span class="sm-bold">Indifferenziata</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Carta" checked>
-                        <span class="sm-bold">Carta</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Libero">
-                        <span class="sm-bold">Libero</span>
-                    </label> <br>
+                <div class="edit-panel-content">
+                    <h2 class="title">Modifica</h2>
+                    <p class="sm-thin">Giovedi:</p>
+
+                    <div name="trashes" id="gioTrashes" class="trashes">
+                        <label>
+                            <input type="checkbox" value="Vetro">
+                            <span class="sm-bold">Vetro</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Umido">
+                            <span class="sm-bold">Umido</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Plastica">
+                            <span class="sm-bold">Plastica</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Metallo">
+                            <span class="sm-bold">Metallo</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Indifferenziata">
+                            <span class="sm-bold">Indifferenziata</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Carta" checked>
+                            <span class="sm-bold">Carta</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Libero">
+                            <span class="sm-bold">Libero</span>
+                        </label> <br>
+                    </div>
+
+                    <div class="submit button convex done" onclick="displayTrash(`gio`, `gioTrashes`, `gioEditPanel`)">
+                        Fatto
+                    </div>
+
+
                 </div>
-
-                <div class="submit button convex done" onclick="displayTrash(`gio`, `gioTrashes`, `gioEditPanel`)">Fatto
-                </div>
-
-
-
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`gio`, `gioTrashes`, `gioEditPanel`)">
@@ -333,45 +344,48 @@
                         <i class="fa-solid fa-arrow-left"></i>
                     </div>
                 </div>
-                <h2 class="title">Modifica</h2>
-                <p class="sm-thin">Venerdi:</p>
 
-                <div name="trashes" id="venTrashes" class="trashes">
-                    <label>
-                        <input type="checkbox" value="Vetro">
-                        <span class="sm-bold">Vetro</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Umido" checked>
-                        <span class="sm-bold">Umido</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Plastica">
-                        <span class="sm-bold">Plastica</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Metallo" checked>
-                        <span class="sm-bold">Metallo</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Indifferenziata">
-                        <span class="sm-bold">Indifferenziata</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Carta">
-                        <span class="sm-bold">Carta</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Libero">
-                        <span class="sm-bold">Libero</span>
-                    </label> <br>
+                <div class="edit-panel-content">
+                    <h2 class="title">Modifica</h2>
+                    <p class="sm-thin">Venerdi:</p>
+
+                    <div name="trashes" id="venTrashes" class="trashes">
+                        <label>
+                            <input type="checkbox" value="Vetro">
+                            <span class="sm-bold">Vetro</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Umido" checked>
+                            <span class="sm-bold">Umido</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Plastica">
+                            <span class="sm-bold">Plastica</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Metallo" checked>
+                            <span class="sm-bold">Metallo</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Indifferenziata">
+                            <span class="sm-bold">Indifferenziata</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Carta">
+                            <span class="sm-bold">Carta</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Libero">
+                            <span class="sm-bold">Libero</span>
+                        </label> <br>
+                    </div>
+
+                    <div class="submit button convex done" onclick="displayTrash(`ven`, `venTrashes`, `venEditPanel`)">
+                        Fatto
+                    </div>
+
+
                 </div>
-
-                <div class="submit button convex done" onclick="displayTrash(`ven`, `venTrashes`, `venEditPanel`)">Fatto
-                </div>
-
-
-
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`ven`, `venTrashes`, `venEditPanel`)">
@@ -388,45 +402,48 @@
                         <i class="fa-solid fa-arrow-left"></i>
                     </div>
                 </div>
-                <h2 class="title">Modifica</h2>
-                <p class="sm-thin">Sabato:</p>
 
-                <div name="trashes" id="sabTrashes" class="trashes">
-                    <label>
-                        <input type="checkbox" value="Vetro">
-                        <span class="sm-bold">Vetro</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Umido">
-                        <span class="sm-bold">Umido</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Plastica">
-                        <span class="sm-bold">Plastica</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Metallo">
-                        <span class="sm-bold">Metallo</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Indifferenziata">
-                        <span class="sm-bold">Indifferenziata</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Carta">
-                        <span class="sm-bold">Carta</span>
-                    </label> <br>
-                    <label>
-                        <input type="checkbox" value="Libero" checked>
-                        <span class="sm-bold">Libero</span>
-                    </label> <br>
+                <div class="edit-panel-content">
+                    <h2 class="title">Modifica</h2>
+                    <p class="sm-thin">Sabato:</p>
+
+                    <div name="trashes" id="sabTrashes" class="trashes">
+                        <label>
+                            <input type="checkbox" value="Vetro">
+                            <span class="sm-bold">Vetro</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Umido">
+                            <span class="sm-bold">Umido</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Plastica">
+                            <span class="sm-bold">Plastica</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Metallo">
+                            <span class="sm-bold">Metallo</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Indifferenziata">
+                            <span class="sm-bold">Indifferenziata</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Carta">
+                            <span class="sm-bold">Carta</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Libero" checked>
+                            <span class="sm-bold">Libero</span>
+                        </label> <br>
+                    </div>
+
+                    <div class="submit button convex done" onclick="displayTrash(`sab`, `sabTrashes`, `sabEditPanel`)">
+                        Fatto
+                    </div>
+
+
                 </div>
-
-                <div class="submit button convex done" onclick="displayTrash(`sab`, `sabTrashes`, `sabEditPanel`)">Fatto
-                </div>
-
-
-
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`sab`, `sabTrashes`, `sabEditPanel`)">
@@ -444,6 +461,7 @@
                 <i class="fa-solid fa-arrow-left"></i>
             </div>
         </div>
+
         <div class="search-content">
             <h2 class="title">Cerca rifiuti</h2>
 
@@ -451,7 +469,7 @@
             <p class="mysearch sm-thin"></p>
             <div class="liste">
 
-                <div id="lista-umido" class="infoList convex" onclick="showInfo('lista-umido')">
+                <div id="lista-umido" class="infoList convex container" onclick="showInfo('lista-umido')">
                     <h4 class="sm-thin">Umido</h4>
                     <span class="invisible-text">
                         Sscarti e avanzi di cucina (sia cotti che crudi, purché freddi); bucce e resti di frutta; scarti
@@ -461,7 +479,8 @@
                     </span>
                 </div>
 
-                <div id="lista-indifferenziata" class="infoList convex" onclick="showInfo('lista-indifferenziata')">
+                <div id="lista-indifferenziata" class="infoList convex container"
+                    onclick="showInfo('lista-indifferenziata')">
                     <h4 class="sm-thin">Indifferenziata</h4>
                     <span class="invisible-text">
                         Giocattoli rotti, pannolini, assorbenti, cotton fioc, spugne sintetiche, polvere, pyrex,
@@ -471,14 +490,14 @@
                     </span>
                 </div>
 
-                <div id="lista-vetro" class="infoList convex" onclick="showInfo('lista-vetro')">
+                <div id="lista-vetro" class="infoList convex container" onclick="showInfo('lista-vetro')">
                     <h4 class="sm-thin">Vetro</h4>
                     <span class="invisible-text">
                         Imballaggi e bottiglie in vetro, anche se sporchi o con etichette.
                     </span>
                 </div>
 
-                <div id="lista-plastica" class="infoList convex" onclick="showInfo('lista-plastica')">
+                <div id="lista-plastica" class="infoList convex container" onclick="showInfo('lista-plastica')">
                     <h4 class="sm-thin">Plastica</h4>
                     <span class="invisible-text">
                         Imballaggi come bottiglie, vaschette, flaconi, vasetti, buste e bustine, piatti e bicchieri
@@ -486,7 +505,7 @@
                     </span>
                 </div>
 
-                <div id="lista-carta" class="infoList convex" onclick="showInfo('lista-carta')">
+                <div id="lista-carta" class="infoList convex container" onclick="showInfo('lista-carta')">
                     <h4 class="sm-thin">Carta</h4>
                     <span class="invisible-text">
                         Giornali, riviste, libri e quaderni, moduli, scatole e imballaggi in cartone, Tetra Pak senza
@@ -494,7 +513,7 @@
                     </span>
                 </div>
 
-                <div id="lista-metallo" class="infoList convex" onclick="showInfo('lista-metallo')">
+                <div id="lista-metallo" class="infoList convex container" onclick="showInfo('lista-metallo')">
                     <h4 class="sm-thin">Metallo</h4>
                     <span class="invisible-text">
                         Lattine, fogli in alluminio, bombolette spray non infiammabili, scatolette e barattoli per carne
@@ -538,7 +557,7 @@
             trashbin.removeChild(bins[0])
 
 
-            today = document.querySelector('#today').innerText = raccolta[dayN];
+            today = document.querySelector('#today').innerText = raccolta[dayN].split(',').join(', ');
             if (dayN >= raccolta.length - 1) {
                 domani.innerHTML = raccolta[0];
             } else {
