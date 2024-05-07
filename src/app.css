@@ -43,8 +43,6 @@ li {
   list-style-type: none;
 }
 
-
-
 .visible {
   animation: sho .2s ease-in-out forwards !important;
 }
@@ -130,6 +128,14 @@ li {
   font-weight: 600;
   display: inline;
 
+}
+
+.search-panel h2,
+.edit-panel h2 {
+  font-size: 20px;
+  order: 2;
+  margin: auto;
+  padding-right: 20px;
 }
 
 .sm-bold {
@@ -250,7 +256,7 @@ li {
 .edit-panel-content {
   width: 500px;
   padding: 20px;
-  margin-top: 6vh;
+  margin-top: 10vh;
 }
 
 .trashes {
@@ -407,7 +413,7 @@ i {
 }
 
 .search-content {
-  width: 80%;
+  width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -421,7 +427,7 @@ i {
 @media (min-width: 500px) {
   .search-content {
     max-height: 100vh;
-    width: 40%;
+    width: 500px;
   }
 
   .bar {
@@ -441,6 +447,10 @@ i {
   .edit-panel-content {
     width: 100vw;
     padding: 20px 40px;
+  }
+
+  .search-content {
+    width: 80%;
   }
 
 }
