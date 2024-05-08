@@ -4,6 +4,7 @@
   background-size: 100%;
   display: flex;
   justify-content: center;
+  max-width: 95vw;
 }
 
 /*UTILITIES*/
@@ -168,7 +169,6 @@ li {
   background-size: cover;
   border-radius: 20px;
   padding: 10px 0;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -575,13 +575,14 @@ i {
   align-items: center;
   background-color: var(--light);
   transition: all .4s;
+  z-index: 1000;
 }
 
 .tmp {
   height: 100%;
   aspect-ratio: 1/1 !important;
   border-radius: 50%;
-  margin: 0 -10px;
+  margin: 0 -6%;
   z-index: 10;
 }
 

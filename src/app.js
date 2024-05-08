@@ -23,7 +23,8 @@ let today;
 const trashbin = document.querySelector('.trashbin');
 
 window.addEventListener('load', () => {
-
+    document.querySelector('.loading').style.opacity = '0'
+    document.querySelector('.loading').style.transform = 'translateX(150%)'
     console.log('ready')
 
     if (JSON.parse(localStorage.getItem('isDarkMode')) === true) {
@@ -43,11 +44,6 @@ window.addEventListener('load', () => {
 
 
 })
-
-
-//loading TO FIX
-document.querySelector('.loading').style.opacity = '0'
-document.querySelector('.loading').style.transform = 'translateX(150%)'
 
 
 
