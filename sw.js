@@ -1,7 +1,40 @@
 //cache
-const cacheSpazza = 'cache-v1';
-const preCache = [
-  '/',
+// const cacheSpazza = 'cache-v1';
+// const preCache = [
+//   '/',
+//   'index.html',
+//   'src/app.css',
+//   'src/app.js',
+//   'images/carta.png',
+//   'images/icon-20.png',
+//   'images/icon-192.png',
+//   'images/indifferenziata.png',
+//   'images/libero.png',
+//   'images/metallo.png',
+//   'images/plastica.png',
+//   'images/umido.png',
+//   'images/vetro.png'
+// ]
+
+// self.addEventListener('install', (e) => {
+//   e.waitUntil(
+//     caches.open(cacheSpazza).then(cache => {
+//       return cache.addAll(preCache);
+//       console.log('precached!');
+//     })
+//   );
+// })
+
+
+const addResourcesToCache = async (resources) => {
+  const cache = await caches.open("v1");
+  await cache.addAll(resources);
+};
+
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    addResourcesToCache([
+      '/',
   'index.html',
   'src/app.css',
   'src/app.js',
@@ -14,16 +47,10 @@ const preCache = [
   'images/plastica.png',
   'images/umido.png',
   'images/vetro.png'
-]
-
-self.addEventListener('install', (e) => {
-  e.waitUntil(
-    caches.open(cacheSpazza).then(cache => {
-      return cache.addAll(preCache);
-      console.log('precached!');
-    })
+    ]),
   );
-})
+});
+
 
 self.addEventListener('fetch', event => {
   event.respondWith(caches.match(event.request)
