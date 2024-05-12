@@ -539,8 +539,14 @@
     <script>
         //sw
 
-if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js");
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+  .then(function() {
+    console.log('service worker registered');
+  });
+}
+else {
+  console.log('cannot register');
 }
 
     </script>
