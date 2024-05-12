@@ -34,19 +34,19 @@ const addResourcesToCache = async (resources) => {
 self.addEventListener("install", (event) => {
   event.waitUntil(
     addResourcesToCache([
-      '/',
-  'index.html',
-  'src/app.css',
-  'src/app.js',
-  'images/carta.png',
-  'images/icon-20.png',
-  'images/icon-192.png',
-  'images/indifferenziata.png',
-  'images/libero.png',
-  'images/metallo.png',
-  'images/plastica.png',
-  'images/umido.png',
-  'images/vetro.png'
+      './',
+  './index.html',
+  './src/app.css',
+  './src/app.js',
+  './images/carta.png',
+  './images/icon-20.png',
+  './images/icon-192.png',
+  './images/indifferenziata.png',
+  './images/libero.png',
+  './images/metallo.png',
+  './images/plastica.png',
+  './images/umido.png',
+  './images/vetro.png'
     ]),
   );
 });
