@@ -65,10 +65,5 @@ function darkMode() {
     localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode))
 }
 
-//sw
-
-if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("../sw.js");
-}
 
 
