@@ -218,8 +218,7 @@ li {
 }
 
 .trash-type .button,
-.trash-type p,
-.fa-solid {
+.trash-type p {
   pointer-events: none
 }
 
@@ -381,12 +380,13 @@ input:checked~.customBoxes {
   place-content: center;
 }
 
-i {
-  color: var(--dark);
-  font-size: 12px;
+.icon {
+  width: 1em;
+  height: 1em;
 }
 
-.fa-moon {
+
+.moon {
   display: none;
 }
 
@@ -554,11 +554,15 @@ i {
     transform: translateX(90%);
   }
 
-  .fa-sun {
+  .icon {
+    filter: brightness(2.5);
+  }
+
+  .sun {
     display: none;
   }
 
-  .fa-moon {
+  .moon {
     display: inline;
   }
 }
