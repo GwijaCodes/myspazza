@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="src/app.css">
     <link rel="apple-touch-logo" href="./images/icon-192.png">
     <link rel="shortcut icon" href="./images/icon-20.png" type="image/x-icon">
+    <meta name="description"
+        content="Spazza non è altro che un calendario settimanale personalizzabile, dotato di un piccolo archivio per guidare l’utente alla giusta differenziazione, con un’estetica minimale.">
     <title>SPAZZA</title>
 </head>
 
@@ -574,6 +576,7 @@
             trashCount.push('Libero')
             const bin = document.createElement('img');
             bin.classList.add('tmp');
+            bin.setAttribute('alt', 'bidone di oggi');
             trashbin.textContent = '';
 
             for (let count of trashCount) {
@@ -675,7 +678,6 @@
             document.querySelector('.search-panel').classList.toggle('visible');
         }
 
-
         //div to style checkboxes
         const customBoxes = document.createElement('span');
         customBoxes.classList.add('customBoxes', 'concave');
@@ -686,8 +688,6 @@
                 customBoxes.style.background = '#000'
             }
         }
-
-
 
     </script>
 
