@@ -13,6 +13,8 @@ let oggi = document.querySelector('#oggi').innerHTML = `${weekday} ${day} ${mont
 let domani = document.querySelector('#tomorrow');
 
 
+
+
 //mostra cosa buttare oggi e domani
 
 let myDays = document.querySelectorAll('label p span');
@@ -21,8 +23,8 @@ let today;
 const trashbin = document.querySelector('.trashbin');
 
 window.addEventListener('load', () => {
-
-
+    document.querySelector('.loading').style.opacity = '0'
+    document.querySelector('.loading').style.transform = 'translateX(150%)'
     console.log('ready')
 
     if (JSON.parse(localStorage.getItem('isDarkMode')) === true) {
@@ -37,42 +39,21 @@ window.addEventListener('load', () => {
             myDays[i].textContent = raccolta[i];
         }
     }
-
+    checkBins()
 
 })
 
-setInterval(() => {
-    today = document.querySelector('#today').innerText = raccolta[dayN];
-    if (dayN >= raccolta.length - 1) {
-        domani.innerHTML = raccolta[0];
-    } else {
-        domani.innerHTML = raccolta[dayN + 1];
-    }
 
-    //visualizza bidone
 
-    switch (today) {
-        case ' Plastica':
-            trashbin.style.background = 'url(../images/bin-yellow.png)';
-            break;
-        case ' Umido':
-            trashbin.style.background = 'url(../images/bin-brown.png)';
-            break;
-        case ' Carta':
-            trashbin.style.background = 'url(../images/bin-bluee.png)';
-            break;
-        case ' Vetro':
-        case ' Metallo':
-            trashbin.style.background = 'url(../images/bin-green.png)';
-            break;
-        case ' Indifferenziata':
-            trashbin.style.background = 'url(../images/bin-grey.png)';
-            break;
-        case ' Giorno Libero':
-            trashbin.style.background = 'url(../images/bin-party.png)';
-    }
+document.querySelector('body').addEventListener('click', () => {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', 'var(--light)');
 
-}, 500)
+    checkBins()
+
+})
+
+
+
 
 //dark mode
 let isDarkMode = false;
