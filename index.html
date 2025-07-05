@@ -21,7 +21,7 @@
 
 <body>
     <div class="bar">
-        <div class="toggle-dark" onclick="darkMode()">
+        <div class="toggle-dark" data-action="toggle-dark-mode">
             <div class="dark-switch concave">
                 <div class="dark-switch-toggle convex">
                     <i class="fa-regular fa-sun"></i>
@@ -536,160 +536,37 @@
 
     </div>
 
-    <script>
-        //sw
-
-const registerServiceWorker = async () => {
-  if ("serviceWorker" in navigator) {
-    try {
-      const registration = await navigator.serviceWorker.register("./sw.js", {
-        scope: "./",
-      });
-      if (registration.installing) {
-        console.log("Service worker installing");
-      } else if (registration.waiting) {
-        console.log("Service worker installed");
-      } else if (registration.active) {
-        console.log("Service worker active");
-      }
-    } catch (error) {
-      console.error(`Registration failed with ${error}`);
-    }
-  }
-};
-
-registerServiceWorker();
-
-
-    </script>
-
 
     <script src="./src/app.js"></script>
 
-
-    <script type="text/javascript">
-
-        function checkBins() {
-            const trashCount = raccolta[dayN].split(',');
-            trashCount.push('Libero')
-            const bin = document.createElement('img');
-            bin.classList.add('tmp');
-            trashbin.textContent = '';
-
-            for (let count of trashCount) {
-                // console.log(count.toLowerCase())
-                trashbin.appendChild(bin.cloneNode(true))
-                bin.src = 'images/' + count.toLowerCase() + '.png';
-            }
-
-            const bins = document.querySelectorAll('.tmp')
-            trashbin.removeChild(bins[0])
-
-
-            today = document.querySelector('#today').innerText = raccolta[dayN].split(',').join(', ');
-            if (dayN >= raccolta.length - 1) {
-                domani.innerHTML = raccolta[0];
-            } else {
-                domani.innerHTML = raccolta[dayN + 1];
-            }
-        }
-
-
-        function showInfo(thisList) {
-            document.querySelector('#' + thisList + ' span').classList.toggle('invisible-text');
-            document.querySelector('#' + thisList).classList.toggle('open');
-        }
-
-        //RICERCA RIFIUTI
-        const searchInput = document.getElementById('searchInput');
-        const items = document.querySelectorAll('.infoList span');
-        const mysearch = document.querySelector('.mysearch');
-        const searchResult = document.querySelector('.search-result');
-
-        searchInput.addEventListener('input', function () {
-            const searchValue = searchInput.value.toLowerCase();
-            searchValue != '' ? mysearch.innerText = searchInput.value + ' va in...' : mysearch.innerText = ''
-
-            for (let i = 0; i < items.length; i++) {
-                const item = items[i];
-                const itemName = item.textContent.toLowerCase();
-                if (itemName.includes(searchValue)) {
-                    item.parentElement.classList.remove('invisible-text');
-                } else {
-                    item.parentElement.classList.add('invisible-text');
-                }
-            }
-        });
-
-
-
-        //select without the need to hold down ctrl
-        window.onmousedown = function (e) {
-
-            var el = e.target;
-            if (el.tagName.toLowerCase() == 'option') {
-                e.preventDefault();
-
-                if (el.hasAttribute('selected')) el.removeAttribute('selected');
-                else el.setAttribute('selected', '');
-
-                var select = el.parentNode.cloneNode(true);
-                el.parentNode.parentNode.replaceChild(select, el.parentNode);
-            }
-        }
-
-
-        function displayTrash(dayName, dayTrashes, dayEditPanel) {
-
-
-            //animate panel
-            document.querySelector('.' + dayEditPanel).classList.toggle('invisible');
-            document.querySelector('.' + dayEditPanel).classList.toggle('visible');
-
-
-            //get checked values
-            let selectedValues = [];
-            document.querySelectorAll("#" + dayTrashes + " input[type='checkbox']").forEach((item) => {
-                if (item.checked === true) {
-                    selectedValues.push(item.value)
-                }
-
-            })
-
-
-            //save checked
-            document.querySelector("#" + dayName).innerText = selectedValues;
-            raccolta = [...document.querySelectorAll('label p span')].map(el => el.textContent)
-            spazza = raccolta[dayN];
-            localStorage.setItem("raccolta", JSON.stringify(raccolta));
-        }
-
-        function hidePanel(thisPanel) {
-            document.querySelector('.' + thisPanel).classList.add('invisible')
-            document.querySelector('.' + thisPanel).classList.remove('visible')
-
-        }
-
-        function displaySearchPanel() {
-            document.querySelector('.search-panel').classList.toggle('invisible');
-            document.querySelector('.search-panel').classList.toggle('visible');
-        }
-
-
-        //div to style checkboxes
-        const customBoxes = document.createElement('span');
-        customBoxes.classList.add('customBoxes', 'concave');
-        const allBoxes = document.querySelectorAll('.trashes label');
-        for (let i = 0; i < allBoxes.length; i++) {
-            allBoxes[i].appendChild(customBoxes.cloneNode(true));
-            if (allBoxes[i].checked === true) {
-                customBoxes.style.background = '#000'
-            }
-        }
-
-
-
-    </script>
+    <script type="module">
+        import { 
+          checkBins, 
+          showInfo, 
+          setupSearchListener, 
+          selectWithoutCtrl, 
+          displayTrash, 
+          hidePanel, 
+          displaySearchPanel,
+          setupCustomBoxes,
+          registerServiceWorker
+        } from './src/app.js';
+      
+        window.checkBins = checkBins;
+        window.showInfo = showInfo;
+        window.displayTrash = displayTrash;
+        window.hidePanel = hidePanel;
+        window.displaySearchPanel = displaySearchPanel;
+      
+        setupSearchListener();
+        selectWithoutCtrl();
+        setupCustomBoxes();
+      
+        // registra il service worker
+        registerServiceWorker();
+      </script>
+      
+      
 
 
 
